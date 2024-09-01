@@ -1,0 +1,48 @@
+body
+{
+    padding: 0;
+    margin: 0 ;
+    box-sizing: border-box;
+   background-color: rgba(3, 12, 14, 0.01);
+}
+.container
+{
+    content: '';
+    width: 1000px;
+    height: 600px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 3px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.element
+{
+  
+  width: 200px;
+  height: 200px;
+  background-color: yellow;
+  display: grid;
+  place-items: center;;
+}
+.link-to-next
+{
+    width: 100px;
+    height: 50px ;
+    border-radius: 10px;
+    background-color: aqua; 
+    z-index: 10;
+    text-align: center;
+    margin: auto;
+    cursor: pointer;
+}
+a
+{
+    color: #3d2525 ;
+    text-decoration: none ;
+    font-size: 1rem;  
+    line-height: 50px;
+}
