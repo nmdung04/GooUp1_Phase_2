@@ -44,7 +44,8 @@
         align-items: center;
         justify-content: flex-start;
         padding: 20px 19px;
-        transform: translateX(-2px);
+        transform: translateX(-0.1px);
+        
         
     }
     svg{
