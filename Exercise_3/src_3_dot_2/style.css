@@ -78,12 +78,18 @@ body
     font-size: 16px;
 }
 .navbar {
-    align-self: stretch;
+    width: 100%;
     position: relative;
     height: 119px;
     overflow: hidden;
     flex-shrink: 0;
+    text-align: center;
+    font-size: 15px;
+    color: #fff;
+    font-family: Poppins;
 }
+
+
 .find-the-best {
     margin: 0;
 }
@@ -97,6 +103,7 @@ body
     position: relative;
     letter-spacing: 0.2px;
     line-height: 20px;
+
 }
 .sub-heading {
     overflow: hidden;
@@ -107,6 +114,7 @@ body
     padding: 10px;
     font-size: 16px;
     color: #e5e5e5;
+    gap: 0.25em;
 }
 .text-content {
     overflow: hidden;
@@ -167,14 +175,14 @@ body
     padding: 40px 10px;
 }
 .content {
-    width: 905px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding: 45px 0px;
+    padding: 0px;
     box-sizing: border-box;
-    gap: 61px;
+    gap: 45px;
     font-size: 55px;
 }
 .dark-hero-3 {
@@ -193,5 +201,240 @@ body
     font-size: 15px;
     color: #fff;
     font-family: Poppins;
-}
+} 
 
+@media (min-width: 523px)  and (max-width: 768px)
+{
+    .dark-hero-3
+    {
+        padding: 0 ;
+        gap: calc(0.043*100vh);
+    }
+    svg
+    {
+        width: 63px;
+        position: relative;
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 1%;
+    }
+    path
+    {
+        height: 55px;
+        scale: 1;
+    }
+    .logo-dark-child {
+        width: 186px;
+        position: relative;
+        height: 58px;
+        object-fit: cover;
+    }
+    .logo-dark {
+        position: relative;
+        top: calc(50% - 39.5px);
+        left: 15px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 10px;
+        width: fit-content;
+    }
+    .home {
+        position: relative;
+        letter-spacing: 0.2px;
+        line-height: 27px;
+        display: none;
+    }
+    .link {
+        overflow: hidden;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 10px;
+
+    }
+    .link-parent {
+        overflow: hidden;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 31px;
+
+        display: none;
+    }
+    .menu {
+        position: absolute;
+        top: calc(50% - 23.5px);
+        left: calc(50% - 194px);
+        overflow: hidden;
+
+        display: none;
+
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    .button-parent {
+        position: absolute;
+        top: 28px;
+        right: 16px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        z-index: 10;
+        width: 50%;
+        gap: 16px;
+
+ 
+
+    }
+    .sign-up {
+        position: relative;
+        letter-spacing: 0.2px;
+        line-height: 16px;
+        font-weight: 500;
+        
+    }
+    .button {
+        position: relative;
+        box-shadow: 0px 4px 31px rgba(0, 0, 0, 0.15);
+        border-radius: 39px;
+        border: 1px solid #fff;
+        box-sizing: border-box;
+        width:121px;
+        height: 52px;
+        right: 0;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 19px;
+        font-size: 16px;
+        color: #fff;
+        font-family: Poppins;
+    }
+    .navbar {
+        width: 100%;
+        position: relative;
+        height: 119px;
+        overflow: hidden;
+        flex-shrink: 0;
+        text-align: center;
+        font-size: 15px;
+        color: #fff;
+        font-family: Poppins;
+        gap: 30%;
+    }
+
+    .find-the-best {
+        margin: 0 4px 0 0;
+        width: 100%;
+        
+    }
+    .find-the-best.line-2
+    {
+        padding-left: 3px;
+    }
+    .find-the-best-container {
+        position: relative;
+        letter-spacing: 0.2px;
+        line-height: 57px;
+        font-weight: 500;
+        text-wrap: wrap;
+        font-size: 46px;
+        text-align: center;
+        width: 310px;
+    }
+    .if-debugging-is {
+        position: relative;
+        letter-spacing: 0.2px;
+        line-height: 20px;
+        margin: 0;
+        font-weight: 600;
+    }
+    .sub-heading {
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        font-size: 16px;
+        color: #e5e5e5;
+        flex-wrap: wrap;
+        gap: 0;
+    }
+    .text-content {
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 7px;
+        width: 75%;
+    }
+    
+    .button1 {
+        box-shadow: 0px 4px 31px rgba(0, 0, 0, 0.15);
+        border-radius: 39px;
+        background-color: #fff;
+        height: 52px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 0px 36px;
+        box-sizing: border-box;
+        width: 100%;
+    }
+    .button2 {
+        filter: drop-shadow(0px 4px 31px rgba(0, 0, 0, 0.15));
+        border-radius: 39px;
+        border: 1px solid #fff;
+        box-sizing: border-box;
+        height: 52px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 30px;
+        color: #fff;
+        width: 98%;
+    }
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 14px;
+        text-align: left;
+        font-size: 16px;
+        color: #2d3748;
+        width: calc(45% + 15.65px);
+
+    }
+    .screen-icon {
+        width: fit-content;
+        position: relative;
+        border-radius: 5px;
+        height: fit-content;
+        object-fit: cover;
+        scale: 1.0;
+    }
+    .screen-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 0 10px;
+    }
+}
