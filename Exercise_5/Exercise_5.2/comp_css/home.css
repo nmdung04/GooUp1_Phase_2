@@ -1,0 +1,345 @@
+
+.logo-dark-child {
+    width: 186px;
+    position: relative;
+    height: 58px;
+    object-fit: cover;
+}
+.logo-dark {
+    position: absolute;
+    top: calc(50% - 39.5px);
+    left: 30px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 10px;
+}
+.home {
+    position: relative;
+    letter-spacing: 0.2px;
+    line-height: 27px;
+}
+.link {
+    overflow: visible;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+    
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+.link-parent {
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 51px;
+}
+.menu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    
+}
+.nav-right {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.sign-up {
+    position: relative;
+    letter-spacing: 0.2px;
+    line-height: 16px;
+    font-weight: 500;
+}
+.menu-small {
+    display: none;
+    overflow-x: visible ;
+    top : 50%;
+    right: -80px;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    
+}
+.menu-icon {
+    width: 77px;
+}
+.button {
+    position: absolute;
+    top: calc(50% - 26.5px);
+    right: 39px;
+    box-shadow: 0px 4px 31px rgba(0, 0, 0, 0.15);
+    border-radius: 39px;
+    border: 1px solid #fff;
+    box-sizing: border-box;
+    height: 52px;
+    overflow: visible;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 26px;
+    text-align: left;
+    font-size: 16px;
+    width : 155px;
+}
+
+.navbar {
+    align-self: stretch;
+    position: relative;
+    height: 119px;
+    overflow: visible;
+    flex-shrink: 0;
+}
+.find-the-best {
+    margin: 0;
+}
+.find-the-best-container {
+    position: relative;
+    letter-spacing: 0.2px;
+    line-height: 65.5px;
+    font-weight: 900;
+
+}
+.if-debugging-is {
+    position: relative;
+    letter-spacing: 0.2px;
+    line-height: 20px;
+}
+.sub-heading {
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+    font-size: 16px;
+    color: #e5e5e5;
+}
+.text-content {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 7px;
+}
+.button1 {
+    box-shadow: 0px 4px 31px rgba(0, 0, 0, 0.15);
+    border-radius: 39px;
+    background-color: #fff;
+    height: 52px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 36px;
+    box-sizing: border-box;
+    width: 40%;
+}
+.button2 {
+    filter: drop-shadow(0px 4px 31px rgba(0, 0, 0, 0.15));
+    border-radius: 39px;
+    border: 1px solid #fff;
+    box-sizing: border-box;
+    height: 52px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 36px;
+    color: #fff;
+    width: 39%;
+}
+.buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+    text-align: left;
+    font-size: 16px;
+    color: #2d3748;
+    width: 50%;
+}
+
+.screen-icon {
+    width: 1080px;
+    position: relative;
+    border-radius: 5px;
+    height: 608px;
+    object-fit: cover;
+}
+.screen-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 40px 10px;
+}
+.content {
+    width: 905px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 55px 0px 45px;
+    box-sizing: border-box;
+    gap: 60px;
+    font-size: 55px;
+}
+.content > .text-content {
+    gap: 18px;
+}
+.dark-hero-3 {
+    align-self: stretch;
+    background: linear-gradient(230.95deg, #cb1ae8, #37bda6);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0px 150px;
+    gap: 73px;
+    text-align: center;
+    font-size: 15px;
+    color: #fff;
+}
+
+@media (min-width : 523px) and (max-width: 768px) {
+    .dark-hero-3 {
+        padding: 0;
+        gap: 20px ;
+    }
+    .navbar {
+        width: 100%;
+        position: relative;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        z-index: 100;
+        gap: 17%;
+        padding: 0 15px;
+    
+    }
+    .button {
+        width: 120px;
+        padding: 0 10px;
+        margin: 0 0 0 -5px;
+    }
+    .logo-dark {
+        position: relative;
+        top: 0;
+        right: 0;
+        left: 0;
+        padding: 0 10px 10px ;
+    }
+    .menu {
+        display: none;
+    }
+    .nav-right {
+
+        gap: 15px;
+        width: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 0 10px;
+        position: absolute;
+        right: 8%;
+       
+    }
+    .menu-icon {
+        display: block;
+        width: 70px;
+    }
+    .button {
+        position: relative;
+        top: 0;
+        right: 0;
+    }
+    .menu-small {
+        display: inline;
+        right: 0;
+        position: relative;
+        top: 0;
+        transform: none;  
+    }
+    .buttons {
+        flex-direction: column;
+    }
+
+    .content {
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        padding: 25px 0  ;
+        gap: 42px;
+    }
+    .text-content {
+        width: 100%;
+    }
+    .find-the-best-container 
+    {
+        letter-spacing: 0.2px;
+        font-size: 2.95rem;
+        font-weight: 400;
+        width: 60%;
+        line-height: 57px;
+    }
+    .sub-heading {
+        width: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .link {
+        justify-content: center;
+    }
+
+    .buttons {
+        width: 27.5%;
+    }
+    .button1, .button2 {
+        width: 100%;
+        
+    }
+    .screen-wrapper {
+        max-width: 40%;
+        height: 263px;
+        padding:  50px 0 1px ;
+    }
+    .screen-icon {
+        max-width: 100%;
+        object-fit: cover;
+        height: 100%;
+    }
+
+   
+}
+
+@media (max-width: 1120px)
+{
+    .menu {
+        display: none;
+    }
+    .screen-icon {
+        width: 100%;
+        object-fit: contain;
+    }
+    
+}

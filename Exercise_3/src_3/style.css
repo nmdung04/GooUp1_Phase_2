@@ -7,42 +7,34 @@ body
 }
 .container
 {
-    content: '';
     width: 1000px;
     height: 600px;
-    position: absolute;
+    border: 3px solid red;
+}
+.element
+{
+  width: 200px;
+  height: 200px;
+  background-color: yellow;
+ 
+}
+
+.container {
+   position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 3px solid red;
+}
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.element
-{
-  
-  width: 200px;
-  height: 200px;
-  background-color: yellow;
+.element {
   display: grid;
-  place-items: center;;
+  place-items: center;
 }
-.link-to-next
-{
-    width: 100px;
-    height: 50px ;
-    border-radius: 10px;
-    background-color: aqua; 
-    z-index: 10;
-    text-align: center;
-    margin: auto;
-    cursor: pointer;
-}
-a
-{
-    color: #3d2525 ;
-    text-decoration: none ;
-    font-size: 1rem;  
-    line-height: 50px;
-}
+
+/* .container {
+  margin: auto;
+} */
