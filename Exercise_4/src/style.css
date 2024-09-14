@@ -316,7 +316,7 @@ a {
         position: relative;
         justify-content: center;
         align-items: center;
-        padding: 25px 0  ;
+        padding: 25px 0 0  ;
         gap: 42px;
     }
     .text-content {
@@ -350,18 +350,20 @@ a {
     .screen-wrapper {
         max-width: 40%;
         height: 263px;
-        padding:  50px 0 1px ;
+        padding: 0 0 10px;
+        margin-top: 30px;
     }
     .screen-icon {
         max-width: 100%;
         object-fit: cover;
-        height: 100%;
+        height: auto;
+        scale: 1.15;
     }
 
    
 }
 
-@media (max-width: 1120px)
+@media (min-width: 769px  )and (max-width: 1120px)
 {
     .menu {
         display: none;
@@ -370,5 +372,4 @@ a {
         width: 100%;
         object-fit: contain;
     }
-    
 }
