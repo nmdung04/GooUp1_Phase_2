@@ -19,20 +19,20 @@ body
  
 }
 
-/* .container {
+.container {
    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-} */
+}
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .element {
-  /* display: grid;
-  place-items: center; */
+  display: grid;
+  place-items: center;
   text-align: center;
 }
 
