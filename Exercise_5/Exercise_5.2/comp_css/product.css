@@ -683,7 +683,9 @@ br {
         flex-direction:column;
     }
 
+}
 
-
-
+@media (min-width: 769px) and (max-width : 1120px)
+{
+    
 }
