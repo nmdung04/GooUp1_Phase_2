@@ -691,7 +691,7 @@ br {
 
 }
 
-@media (min-width: 769px) and (max-width : 1120px)
+@media (min-width: 769px) and (max-width :1280px)
 {
     .content1 {
         flex-direction: column;
@@ -811,5 +811,7 @@ br {
 
     /* ------------ */
 
-    
+    .light-cta-2 {
+        width: 100%;
+    }
 }
