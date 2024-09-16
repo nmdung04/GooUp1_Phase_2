@@ -234,7 +234,7 @@
     }
     .enter-your-adress {
         text-align: center;
-        margin: 0 0 0 15%;
+        margin: 0 ;
     }
     .light-cta-3 {
         padding-bottom: 55px;
@@ -259,3 +259,26 @@
     
 }
 
+@media (min-width: 769px) and (max-width: 1120px) {
+    .content6 {
+        flex-direction: column;
+    }
+    .row3 {
+        width: auto;
+        flex-direction: column;
+    }
+    .list3 {
+        flex-direction: row;
+        width: 100%;
+        gap: 70px;
+    }
+    .subtitle6 {
+        align-self: center;
+    }
+    .row4 {
+        flex-direction: row;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+    }
+}

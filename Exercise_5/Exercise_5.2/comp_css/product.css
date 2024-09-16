@@ -442,6 +442,9 @@ br {
 #btn-group-b {
     display: none;
 }
+#cta-content-title-b {
+    display: none;
+}
 @media (min-width : 523px) and (max-width: 768px) {
     .content1 {
         display: flex;
@@ -580,6 +583,9 @@ br {
         margin: 5px 0 0;
         gap: 0;
     }
+    .sub-heading1 > .if-debugging-is > .find-the-best > br {
+        display: inline;
+    }
     .sub-heading2 > .if-debugging-is > .find-the-best > br {
         display: inline;
     }
@@ -687,5 +693,123 @@ br {
 
 @media (min-width: 769px) and (max-width : 1120px)
 {
+    .content1 {
+        flex-direction: column;
+        height: auto;
+
+    }
+    .card , .card1 {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    .paragraphe, .paragraphe1 {
+        text-align: center;
+    }
+
+    /* ----------- */
+
+    #btn-parent-a {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #btn-parent-a > .button4, .button3 {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+
+    /* --------- */
+    .content2 > .screen-container {
+        margin-right: 20px;
+    }
+    .screen-icon2 {
+        width: 500px;
+    }
+
+    /* --------- */
+
+
+    .content4 {
+        display:flex;
+        align-items:center;
+        justify-content:flex-start;
+        flex-direction:column;
+        gap: 0;
+        height: auto;
+        width: 70%;
+    }
+    #cta-content-title-a {
+        display: none;
+    }
+    #cta-content-title-b {
+        display: block;
+    }
+    .text-content3 {
+        margin: 25px 0;
+        text-align: center;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        flex-direction:column;  
+        width: 90%;
+    }
+    .find-the-best > br {
+        display: none;
+    }
+    span {
+        display: inline;
+    }
+    .paragraphe3 {
+        width: 100%;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        flex-direction:column;
+        padding-top: 20px;
+    }
+    .text-content3 > .home {
+        width: 100%;
+    }
+    #parag-3 .find-the-best:nth-last-child(-n +2) {
+        display: none;
+    }
+    .frame-div {
+        margin: 35px 0 60px;
+        width: 90%;
+    }
+    .screen-icon3 {
+        
+        width: 100%;
+        height: auto;
+        flex-shrink: 0; 
+       object-fit: cover;
+    }
+    .button-group > .button3 {
+        height: 76px;
+        width: 62%;
+        margin-bottom: 5px;
+    }
+    .button-group > .button8 {
+        height: 76px;
+        width: 60%;
+    }
+    #parag-3 > .find-the-best > br {
+        display: none;
+    }
+    #btn-group-a {
+        display: none;
+    }
+    #btn-group-b {
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        flex-direction:column;
+    }
+
+
+    /* ------------ */
+
     
 }

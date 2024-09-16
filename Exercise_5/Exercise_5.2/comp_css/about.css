@@ -253,3 +253,47 @@
         padding-bottom: 50px;
     }
 }
+
+@media (min-width: 769px) and (max-width: 1120px) {
+
+    .cards {
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        flex-direction:column;
+        width: 80%;
+    }
+    .card3  {
+        min-width: 700px;
+        width: 80%;
+        display: grid;
+        place-items: center;
+        gap: 50px;
+        column-gap: 55px;
+        grid-template-areas:
+          'header header header header header header header header header header header header'
+          'menu menu menu menu menu menu main  main main main  main main'
+          'menu menu menu  menu menu menu right  right right right  right right'
+          'menu menu menu  menu menu menu footer footer footer footer footer footer';
+    }
+    .card3 .heading , .heading1 {
+        grid-area: header;
+    }
+    .card3 > .card-child, .card-item {
+        grid-area: menu;
+    }
+    .card3 > .row {
+        grid-area: main;
+    }
+    .card3 > .list {
+        grid-area: right;
+    }
+    .card3 > .button9 {
+        grid-area: footer;
+    }
+    .subtitle1 {
+        text-wrap: nowrap;
+    }
+    
+
+}
