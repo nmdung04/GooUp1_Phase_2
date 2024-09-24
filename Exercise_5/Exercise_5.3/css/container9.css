@@ -1,3 +1,135 @@
 .content-9 {
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    flex-direction:column;
+    width: 100%;
+    max-height: 926px;
     
 }
+.container-9 {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    width: 1440px;
+    max-width: 1440px;
+    margin-top: -60px;
+    background: linear-gradient(122.62deg, #c8cccf, #97a3a3);
+
+}
+.line-1 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    transform: translateX(5%);
+}
+
+.text-content-9 {
+    font-family: 'Poppins', sans-serif;
+    max-width: 756px;
+    transform: translateX(17%);
+}
+.heading-9 {
+    font-size: 5.5rem;
+    margin: 50px 0 0;
+    
+}
+.subheading-9 {
+    font-size: 24px;
+    max-width: 659px;
+    margin:0 0 15px ;
+}
+#btn9 {
+    font-size: 24px;
+}
+.button-9 {
+    padding: 24px 48px;
+    border-radius: 36px;
+}
+.screen-line-1 {
+    width: 100%;
+    position: relative;
+    max-width: 538px;
+    height: 512px;
+    z-index: -1;
+}
+.image-line-1 {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+.line-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    transform: translate(0,-10%);
+    
+}
+.screen-line-2 {
+    width: 100%;
+    position: relative;
+    max-width: 462px;
+    height: 508px;
+    z-index: -1;
+    transform: translate(10%,-10%);
+}
+.image-line-2 {
+    object-fit: cover;
+    height: 100%;
+    width: 462px;
+}
+/* --------- */
+.div {
+    position: relative;
+    font-weight: 600;
+}
+.frame-child {
+    width: 38px;
+    position: relative;
+    background-color: #363830;
+    height: 4px;
+}
+.lorem-ipsum-dolor {
+    width: 204px;
+    position: relative;
+    font-size: 16px;
+    display: inline-block;
+}
+.parent {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 16px;
+}
+.frame-parent {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 80px;
+}
+.list-9 {
+    position: relative;
+    backdrop-filter: blur(24px);
+    border-radius: 144px;
+    background: linear-gradient(95.95deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.18));
+    width: 100%;
+    max-width: 948px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 40px 88px 40px 88px;
+    box-sizing: border-box;
+    text-align: left;
+    font-size: 24px;
+    color: #363830;
+    font-family: Poppins;
+    transform: translate(-5%,10px);
+}
+
+
+

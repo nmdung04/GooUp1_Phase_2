@@ -6,7 +6,7 @@
 @import url(./container6.css);
 @import url(./container7.css);
 @import url(./container8.css);
-@import url(./container9css);
+@import url(./container9.css);
 @import url(./container10.css);
 
 :root {
@@ -35,6 +35,7 @@ body {
     align-items:center;
     justify-content:flex-start;
     flex-direction:column;
+    width: 100vw;
 }
 .desktop {
     display:flex;
