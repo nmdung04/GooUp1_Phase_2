@@ -1,0 +1,54 @@
+@import url(./container1.css);
+@import url(./container2.css);
+@import url(./container3.css);
+@import url(./container4.css);
+@import url(./container5.css);
+@import url(./container6.css);
+@import url(./container7.css);
+@import url(./container8.css);
+@import url(./container9css);
+@import url(./container10.css);
+
+:root {
+    scroll-snap-type: y mandatory;
+}
+html::-webkit-scrollbar {
+    display: none; 
+}
+html {
+    overflow: -moz-scrollbars-none;
+    -ms-overflow-style: none;
+}
+
+html, body {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: normal;
+
+}
+body {
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    flex-direction:column;
+}
+.desktop {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    gap: 60px;
+    width: 100%;
+    max-width: 1440px;
+}
+.primary-btn {
+    background-color: #252525 ;
+    color: #ffffff;
+    line-height: 18px;
+    font-size: 18px;
+    font-weight: 200;
+}

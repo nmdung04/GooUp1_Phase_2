@@ -1,0 +1,73 @@
+.content-5 {
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    flex-direction:column;
+    gap: 60px;
+    width: 100vw;
+    max-width: 1440px;
+    height: auto;
+}
+.header-5 {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.title-5 {
+    width: 50%;
+    text-align: left;
+    color: #252525;
+    font-family: 'Roboto', sans-serif;
+    font-size: 3.625rem;
+    font-style: normal;
+    font-weight: 700;
+    margin-left: 65px;
+}
+.heading-5 {
+    margin: 0;
+}
+.cards-5 {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    width: 100%;
+    gap: 0;
+    padding: 0 20px;
+}
+.card-item-5 {
+    display:flex;
+    align-items:flex-start;
+    justify-content:flex-start;
+    flex-direction:column;
+    width: 32%;
+    max-width: 400px;
+    margin-top: 15px;
+}
+.card-number {
+    color: rgba(37, 37, 37, 0.55);
+    font-family: 'Avenir', sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.card-parag {
+    color: rgba(37, 37, 37, 0.80);
+    font-family: 'Akatab', sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 10px;
+}
+.card-screen {
+    width: 100%;
+    height: 100%;
+    height: 345px;
+}
+.card-image {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
