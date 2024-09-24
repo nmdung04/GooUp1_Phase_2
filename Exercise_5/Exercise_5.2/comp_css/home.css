@@ -342,8 +342,8 @@ a {
         width: 100%;
         object-fit: contain;
     }
-    .menu-small {
-        display: inline;
-    }
+   .menu-small{
+    display: inline;
+   }
     
 }
