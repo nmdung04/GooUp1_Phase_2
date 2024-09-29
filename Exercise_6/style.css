@@ -3,8 +3,8 @@ body {
     background-color: rgb(205,205,205); 
 }
 .form-container {
-    width: 517px; /* Chiều rộng của form */
-    height: 377.5px; /* Chiều cao của form */
+    width: 517px; 
+    height: 377.5px; 
     margin: 0 auto; 
     margin-top: 200px; 
     border: 1px solid #ccc; 
@@ -30,7 +30,7 @@ body {
     text-align: center; 
     margin-left: auto; 
     margin-top: -4px;
-    margin-right: 9px;/* Đẩy REPLY sang bên phải */
+    margin-right: 9px;
 
 }
 
