@@ -1,0 +1,69 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: rgb(205,205,205); 
+}
+.form-container {
+    width: 517px; /* Chiều rộng của form */
+    height: 377.5px; /* Chiều cao của form */
+    margin: 0 auto; 
+    margin-top: 200px; 
+    border: 1px solid #ccc; 
+    padding: 5px;
+    overflow-y: auto; 
+    border-radius: 10px; 
+    background-color: white; 
+  
+}
+
+.conversation-item {
+    padding: 6.2px 10px 4px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+}
+
+.reply-link {
+    text-decoration: none;
+    font-size: 10px; 
+    color: rgb(86, 214, 199); 
+    font-weight: bold; 
+    text-align: center; 
+    margin-left: auto; 
+    margin-top: -4px;
+    margin-right: 9px;/* Đẩy REPLY sang bên phải */
+
+}
+
+.reply-link:hover {
+    text-decoration: underline;
+    color: #efb0ef;
+}
+
+.avatar {
+    width: 62px;  
+    height: 60px;
+    border-radius: 10px; 
+    margin-right: 9.8px; 
+    margin-top: 1px;
+}
+
+h2 {
+    font-size: 18px; 
+    margin: 24px 0 10px 16px; 
+    letter-spacing: 0.2px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+}
+
+h5 {
+    font-size: 14px;
+    margin-bottom: 2px;
+    margin-top: -2px; 
+    font-weight: bold;
+}
+
+p {
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
