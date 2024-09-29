@@ -1,5 +1,5 @@
 .container-8 {
-    width: 1440px;
+    width: 100%;
     max-width: 1440px;
     display:flex;
     align-items:center;
@@ -50,3 +50,38 @@
 
 }
 
+@media (min-width : 768px) and (max-width : 1180px) 
+{
+    .content-8 {
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        flex-direction:column-reverse;
+    }
+    .text-content-8 {
+        text-align: center;
+    }
+}
+
+@media (min-width : 375px) and (max-width : 768px) 
+{
+    .content-8 {
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        flex-direction:column-reverse;
+    }
+    .text-content-8 {
+        text-align: center;
+        margin: 0;
+    }
+    .screen-wrapper-8 {
+        max-width: 656px;
+        width: 90%;
+        height: auto;
+        margin: 20px 0 ;
+    }
+    .screen-image-8 {
+        width: 100%;
+    }
+}

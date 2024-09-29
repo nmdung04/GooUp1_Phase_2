@@ -42,6 +42,8 @@
     align-items: flex-start;
     gap: 20px;
     margin-top: 4rem;
+    width: 100%;
+    max-width: 1440px;
 }
 .content-6 {
     display: flex;
@@ -110,3 +112,95 @@
 .list {
     margin-top: 4.1rem;
 }
+
+@media (min-width : 768px) and (max-width : 1320px) {
+    .container-6 {
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        flex-direction:column;
+    }
+}
+
+
+@media (min-width : 375px) and (max-width : 768px) {
+    .container-6 {
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        flex-direction:column;
+    }
+    .content-6 {
+        width: 100%;
+    }
+    .heading-6 {
+        width: 100%;
+    }
+    .paragraph {
+        width: 90%;
+    }
+    .list {
+        gap: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 95%;
+        align-self: center;
+    }
+    .icons-parent {
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        flex-direction:column;
+    }
+    .text-content-6 {
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        flex-direction:column;
+        text-align: center;
+    }
+    .button-group {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+    }
+    .heading-6 {
+        text-align: center;
+        margin: 50px 0 24px;
+    }
+
+    .screen-wrapper-6 {
+        width: 90%;
+        max-width: 656px;
+        display: grid;
+        place-items: center;
+    }
+    .image-6 {
+        width: 100%;
+        height: auto;
+    }
+    .paragraph {
+        margin: 20px 0 20px;
+        text-align: center;
+    }
+}
+
+
+@media  (max-width : 505px) 
+{
+    .button-group {
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        flex-direction:column;
+    }
+    .list {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        place-items: center;
+        column-gap: 0;
+    }
+}
+

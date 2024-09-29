@@ -6,6 +6,14 @@
     flex-direction:column;
     margin-top: 70px;
 }
+.container-7 {
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    flex-direction:column;
+    width: 100%;
+    max-width: 1440px;
+}
 .card-info {
     font-family: 'Akatab', sans-serif;
     padding:  0 1.5rem 0.5rem;
@@ -51,8 +59,8 @@
     align-items:flex-start;
     justify-content:flex-start;
     flex-direction:column;
-    width: 24%;
-    max-width: 316px;
+   
+    width: 316px;
     margin-top: 10px;
     
 }
@@ -107,4 +115,44 @@
 }
 #card4 {
     background-image: url(/Exercise_5/Exercise_5.3/assets/container7/container7-4.jpg);
+}
+
+@media (min-width : 768px) and (max-width : 1320px) {
+    .cards-7 {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(2,1fr);
+        row-gap: 10px;
+    }
+}
+
+@media (min-width : 375px) and (max-width : 768px) {
+    .cards-7 {
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        row-gap: 20px;
+        place-items: center;
+    }
+
+    .card-item-7 {
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        flex-direction:column;
+        text-align: center;
+    }
+    .heading-7 {
+        text-align: center;
+        width: 100%;
+        align-self: center;
+    }
+    .title-7 {
+        width: 95%;
+    }
+    .header-7 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
 }
