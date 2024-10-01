@@ -1,24 +1,29 @@
-.background-child {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  background-color: #cdcdcd;
-  width: 1920px;
-  height: 1153px;
+.facebook-icon, .apple-icon, .google, .google-child, .email, .inputfieldtext, .minwidth1, .switchbase, .buttonbase, .width-structure, .minwidth, .height-structure, .button-body, .text, .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.background {
+.title, .register-with1, .facebook-icon, .google-child, .password1, .switchbase, .remember-me1, .background1, .background-item, .background, .background-child {
   position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 1920px;
-  height: 1153px;
+  top: 0;
+  left: 0;
+}
+
+.facebook-icon, .apple-icon, .google-child {
+  width: 75px;
+  height: 75px;
+  border-radius: 15px;
+  border: 1px solid #cdcdcd;
+}
+
+.background-child {
+  background-color: #cdcdcd;
+  width: 100vw;
+  height: auto;
 }
 
 .background-item {
-  position: absolute;
-  top: 0px;
-  left: 0px;
   box-shadow: 0px 7px 23px rgba(0, 0, 0, 0.05);
   border-radius: 15px;
   background-color: #fff;
@@ -27,9 +32,6 @@
 }
 
 .background1 {
-  position: absolute;
-  top: 0px;
-  left: 0px;
   width: 452.5px;
   height: 713.5px;
 }
@@ -61,17 +63,12 @@
   width: 41.5px;
   position: relative;
   line-height: 150%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   height: 15px;
   flex-shrink: 0;
 }
 
 .button-body {
   overflow: hidden;
-  display: flex;
-  flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
   gap: 4px;
@@ -79,9 +76,6 @@
 
 .height-structure {
   height: 24px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
   justify-content: flex-start;
 }
 
@@ -94,19 +88,14 @@
 
 .minwidth {
   overflow: hidden;
-  display: flex;
-  flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
   padding: 0px 12px;
 }
 
 .width-structure {
-  overflow: hidden;
-  display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  overflow: hidden;
 }
 
 .buttonbase {
@@ -119,10 +108,6 @@
   left: 10.17%;
   border-radius: 12px;
   background-color: #4fd1c5;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
   padding: 0px 8px;
   box-sizing: border-box;
   text-align: center;
@@ -131,8 +116,6 @@
 }
 
 .remember-me1 {
-  position: absolute;
-  top: 0px;
   left: 46px;
   line-height: 150%;
   display: inline-block;
@@ -149,20 +132,15 @@
 }
 
 .switchbase {
-  position: absolute;
   height: 100%;
   width: 28.69%;
-  top: 0%;
   right: 71.31%;
   bottom: 0%;
-  left: 0%;
   border-radius: 97.74px;
   background-color: #4fd1c5;
   overflow: hidden;
-  display: flex;
   flex-direction: column;
   align-items: flex-end;
-  justify-content: center;
   padding: 1.4px 2.5px 1.4px 1.4px;
   box-sizing: border-box;
 }
@@ -201,10 +179,6 @@
 
 .minwidth1 {
   overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
   padding: 0px 74px;
 }
 
@@ -212,10 +186,8 @@
   width: 311px;
   overflow: hidden;
   flex-shrink: 0;
-  display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
 }
 
 .email {
@@ -231,16 +203,11 @@
   border: 1px solid #cdcdcd;
   box-sizing: border-box;
   overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
   justify-content: flex-start;
   padding: 0px 20px;
 }
 
 .password1 {
-  position: absolute;
-  top: 0px;
   left: 4.5px;
   line-height: 140%;
   color: #2d3748;
@@ -320,47 +287,29 @@
 }
 
 .google-child {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  border-radius: 15px;
-  border: 1px solid #cdcdcd;
   box-sizing: border-box;
-  width: 75px;
-  height: 75px;
-}
-
-.ioniconllogogoogle {
-  position: absolute;
-  top: 25.5px;
-  left: 25.5px;
-  width: 24px;
-  height: 24px;
-  overflow: hidden;
+  font-size: 22px;
 }
 
 .google {
   position: absolute;
   top: 47px;
   left: 180px;
-  width: 75px;
-  height: 75px;
+  color: #2d3748;
 }
 
 .apple-icon {
   position: absolute;
   top: 47px;
   left: 90px;
-  width: 75px;
-  height: 75px;
+  font-size: 25px;
+  color: #2d3748;
 }
 
 .facebook-icon {
-  position: absolute;
   top: 47px;
-  left: 0px;
-  width: 75px;
-  height: 75px;
+  font-size: 25px;
+  color: #2d3748;
 }
 
 .or {
@@ -374,9 +323,6 @@
 }
 
 .register-with1 {
-  position: absolute;
-  top: 0px;
-  left: 0px;
   line-height: 140%;
   display: inline-block;
   color: #2d3748;
@@ -385,8 +331,6 @@
 }
 
 .title {
-  position: absolute;
-  top: 0px;
   left: 70.5px;
   width: 113.5px;
   height: 167.5px;
@@ -403,18 +347,15 @@
 }
 
 .inputs {
-  position: absolute;
-  top: 275px;
-  left: 739px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   width: 452.5px;
   height: 713.5px;
+  margin-top: 5vw;
 }
 
 .container {
   width: 100%;
   position: relative;
-  height: 1153px;
   text-align: left;
   font-size: 14px;
   color: #a0aec0;
