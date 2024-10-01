@@ -1,0 +1,12 @@
+.text-xxs {
+    font-size : 10px;
+}
+.widthX {
+    width: 1600px;
+}
+.row-h {
+    height: 60px;
+}
+.-posX {
+    transform: translateX(-20px) !important;
+}

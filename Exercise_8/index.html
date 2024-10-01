@@ -3,9 +3,198 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercise 8</title>
+    <title>Landing Page - Authors Table</title>
+    <link rel="stylesheet" href="/Exercise_8/css/style.css">
+    <link rel="stylesheet" href="/Exercise_8/css/custom_style.css">
 </head>
-<body>
-    alo
+<body class="bg-gray-100 font-sans leading-normal tracking-normal flex self-center">
+    <div class="container mx-auto mt-10">
+        <!-- Authors Table -->
+        <div class="bg-white shadow-md rounded my-6 px-6 widthX">
+            <table class="min-w-max w-full table-auto ">
+                <thead >
+                    <th class="float-start space-x-2 px-0 py-6 text-lg pb-2 ">Authors Table</th>
+
+                </thead>
+                <thead>
+                    <tr class="bg-white text-gray-600 uppercase text-sm leading-normal border-b border-gray-200 ">
+                        <th class="py-3 px-0 text-left text-xxs w-5/12 pr-12">Author</th>
+                        <th class="py-3 px-0 text-left text-xxs pl-20 w-28">Function</th>
+                        <th class="py-3 px-0 text-center text-xxs pl-10">Status</th>
+                        <th class="py-3 px-6 text-center text-xxs -translate-x-7">Employed</th>
+                        <th class="py-3 px-6 text-center text-xxs"></th>
+                    </tr>
+                </thead>
+                <tbody class="text-gray-600 text-sm font-light">
+                    <tr class="border-b border-gray-200 hover:bg-gray-100 row-h">
+                        <td class="py-1.5 px-0 text-left whitespace-nowrap">
+                            <div class="flex items-center">
+                                <div class="mr-2">
+                                    <img class="size-12 rounded-xl" src="./assets/image1.png" alt="Avatar">
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="font-extrabold tracking-wider">Esthera Jackson</span>
+                                    <span class="text-sm text-gray-500 tracking-wide">esthera@simmmple.com</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="py-3 pb-2.5 px-6 text-left pl-20 ">
+                            <span class="font-bold">Manager</span>
+                            <span class="text-sm text-gray-500 block">Organization</span>
+                        </td>
+                        <td class="py-3 pb-2.5 px-6 text-center w-68 pl-16">
+                            <span class="bg-green-200 text-green-600 py-1 px-3 rounded-lg text-sm font-medium ">Online</span>
+                        </td>
+                        <td class="py-3 pb-2.5 px-6 text-center -translate-x-6">
+                            <span class="font-bold">14/06/21</span>
+                        </td>
+                        <td class="py-3 pb-2.5 px-6 text-center">
+                            <a href="#" class="text-blue-500 hover:underline">Edit</a>
+                        </td>
+                    </tr>
+
+                    <!-- Repeat similar rows for other authors -->
+                    <tr class="border-b border-gray-200 hover:bg-gray-100 row-h pb-0.5" >
+                        <td class="py-1.5  px-0 text-left whitespace-nowrap row-h ">
+                            <div class="flex items-center">
+                                <div class="mr-2">
+                                    <img class="size-12 rounded-full" src="./assets/image1.png" alt="Avatar">
+                                </div>
+                                <div class=" flex flex-col">
+                                    <span class="font-extrabold tracking-wider">Alexa Liras</span>
+                                    <span class="text-sm text-gray-500 tracking-wide">alexa@simmmple.com</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="py-3 pb-2.5 px-6 text-left pl-20 ">
+                            <span class="font-bold">Programmer</span>
+                            <span class="text-sm text-gray-500 block">Developer</span>
+                        </td>
+                        <td class="py-3 pb-2.5 px-6 text-center pl-16">
+                            <span class="bg-gray-200 text-gray-600 py-1 px-3 rounded-lg w-16 text-sm font-medium">Offline</span>
+                        </td>
+                        <td class="py-3 pb-2.5 px-6 text-center -translate-x-6">
+                            <span class="font-bold">14/06/21</span>
+                        </td>
+                        <td class="py-3 pb-2.5 px-6 text-center">
+                            <a href="#" class="text-blue-500 hover:underline">Edit</a>
+                        </td>
+                    </tr>
+
+                    <!-- Add other authors as needed -->
+                      <!-- row 3-->
+                      <tr class="border-b border-gray-200 hover:bg-gray-100 row-h">
+                        <td class="py-1.5 px-0 text-left whitespace-nowrap">
+                            <div class="flex items-center">
+                                <div class="mr-2">
+                                    <img class="size-12 rounded-xl" src="./assets/image1.png" alt="Avatar">
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="font-extrabold tracking-wider">Laurent Michael</span>
+                                    <span class="text-sm text-gray-500 tracking-wide">laurent@simmmple.com</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="py-3 pb-2.5 px-6 text-left pl-20 ">
+                            <span class="font-bold">Executive</span>
+                            <span class="text-sm text-gray-500 block">Projects</span>
+                        </td>
+                        <td class="py-3 pb-2.5 px-6 text-center w-68 pl-16">
+                            <span class="bg-green-200 text-green-600 py-1 px-3 rounded-lg text-sm font-medium ">Online</span>
+                        </td>
+                        <td class="py-3 pb-2.5 px-6 text-center -translate-x-6">
+                            <span class="font-bold">14/06/21</span>
+                        </td>
+                        <td class="py-3 pb-2.5 px-6 text-center">
+                            <a href="#" class="text-blue-500 hover:underline">Edit</a>
+                        </td>
+                    </tr>
+
+                    <!-- row 4-->
+                    <tr class="border-b border-gray-200 hover:bg-gray-100 row-h">
+                        <td class="py-1.5 px-0 text-left whitespace-nowrap">
+                            <div class="flex items-center">
+                                <div class="mr-2">
+                                    <img class="size-12 rounded-xl" src="./assets/image1.png" alt="Avatar">
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="font-extrabold tracking-wider">Freduardo Hill</span>
+                                    <span class="text-sm text-gray-500 tracking-wide">freduardo@simmmple.com</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="py-3 pb-2.5 px-6 text-left pl-20 ">
+                            <span class="font-bold">Manager</span>
+                            <span class="text-sm text-gray-500 block">Organization</span>
+                        </td>
+                        <td class="py-3 pb-2.5 px-6 text-center w-68 pl-16">
+                            <span class="bg-green-200 text-green-600 py-1 px-3 rounded-lg text-sm font-medium ">Online</span>
+                        </td>
+                        <td class="py-3 pb-2.5 px-6 text-center -translate-x-6">
+                            <span class="font-bold">14/06/21</span>
+                        </td>
+                        <td class="py-3 pb-2.5 px-6 text-center">
+                            <a href="#" class="text-blue-500 hover:underline">Edit</a>
+                        </td>
+                    </tr>
+                    <!--row 5 -->
+                    <tr class="border-b border-gray-200 hover:bg-gray-100 row-h pb-0.5" >
+                        <td class="py-1.5  px-0 text-left whitespace-nowrap row-h ">
+                            <div class="flex items-center">
+                                <div class="mr-2">
+                                    <img class="size-12 rounded-full" src="./assets/image1.png" alt="Avatar">
+                                </div>
+                                <div class=" flex flex-col">
+                                    <span class="font-extrabold tracking-wider">Daniel Thomas</span>
+                                    <span class="text-sm text-gray-500 tracking-wide">daniel@simmmple.com</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="py-3 pb-2.5 px-6 text-left pl-20 ">
+                            <span class="font-bold">Programmer</span>
+                            <span class="text-sm text-gray-500 block">Developer</span>
+                        </td>
+                        <td class="py-3 pb-2.5 px-6 text-center pl-16">
+                            <span class="bg-gray-200 text-gray-600 py-1 px-3 rounded-lg w-16 text-sm font-medium">Offline</span>
+                        </td>
+                        <td class="py-3 pb-2.5 px-6 text-center -translate-x-6">
+                            <span class="font-bold">14/06/21</span>
+                        </td>
+                        <td class="py-3 pb-2.5 px-6 text-center">
+                            <a href="#" class="text-blue-500 hover:underline">Edit</a>
+                        </td>
+                    </tr>
+                    <!-- row 6-->
+
+                    <tr class="border-b border-gray-200 hover:bg-gray-100 row-h pb-0.5" >
+                        <td class="py-1.5  px-0 text-left whitespace-nowrap row-h ">
+                            <div class="flex items-center">
+                                <div class="mr-2">
+                                    <img class="size-12 rounded-full" src="./assets/image1.png" alt="Avatar">
+                                </div>
+                                <div class=" flex flex-col">
+                                    <span class="font-extrabold tracking-wider">Mark Wilson</span>
+                                    <span class="text-sm text-gray-500 tracking-wide">mark@simmmple.com</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="py-3 pb-2.5 px-6 text-left pl-20 ">
+                            <span class="font-bold">Designer</span>
+                            <span class="text-sm text-gray-500 block">UX/UI Design</span>
+                        </td>
+                        <td class="py-3 pb-2.5 px-6 text-center pl-16">
+                            <span class="bg-gray-200 text-gray-600 py-1 px-3 rounded-lg w-16 text-sm font-medium">Offline</span>
+                        </td>
+                        <td class="py-3 pb-2.5 px-6 text-center -translate-x-6">
+                            <span class="font-bold">14/06/21</span>
+                        </td>
+                        <td class="py-3 pb-2.5 px-6 text-center">
+                            <a href="#" class="text-blue-500 hover:underline">Edit</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </body>
 </html>
