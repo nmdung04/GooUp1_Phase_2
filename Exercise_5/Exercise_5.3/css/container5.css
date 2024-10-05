@@ -93,6 +93,13 @@
      align-items:center;
      justify-content:center;
      flex-direction:column;
+     width: 100%;
+     max-width: 600px;
+     height: auto;
+     max-height: 500px;
+    }
+    .card-image {
+        width: 100%;
     }
 }
 

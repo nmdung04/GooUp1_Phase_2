@@ -130,6 +130,9 @@
         justify-content:center;
         flex-direction:column;
     }
+    .clock-icon {
+        margin-left: 10px;
+    }
     .content-6 {
         width: 100%;
     }

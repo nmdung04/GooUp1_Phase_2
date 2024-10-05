@@ -123,6 +123,7 @@
         grid-template-columns: repeat(2,1fr);
         grid-template-rows: repeat(2,1fr);
         row-gap: 10px;
+        place-items: center;
     }
 }
 
@@ -132,6 +133,7 @@
         grid-template-columns: repeat(1,1fr);
         row-gap: 20px;
         place-items: center;
+        
     }
 
     .card-item-7 {
@@ -140,6 +142,12 @@
         justify-content:center;
         flex-direction:column;
         text-align: center;
+    }
+    .card-info {
+       display:flex;
+       align-items:center;
+       justify-content:center;
+       flex-direction:column; 
     }
     .heading-7 {
         text-align: center;
