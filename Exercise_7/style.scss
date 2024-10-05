@@ -202,6 +202,10 @@ $fontSizeIcon : 25px;
     @extend %flexCenter;
     justify-content: flex-start;
     padding: 0px 20px;
+
+    &::placeholder {
+        color: #a0aec0;
+    }
 }
 .password1 {
     @extend %defaultAbsolute;
@@ -354,3 +358,58 @@ $fontSizeIcon : 25px;
     font-family: Helvetica;
 }
 
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 36px;
+    height: 14px;
+  
+    input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+  
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: .4s;
+  
+      &:before {
+        position: absolute;
+        content: "";
+        height: 14px;
+        width: 14px;
+        left: 0px;
+        bottom: 0px;
+        background-color: white;
+        transition: .4s;
+      }
+    }
+  
+    input:checked + .slider {
+      background-color: rgba(79, 209, 197, 1);
+  
+      &:before {
+        transform: translateX(22px);
+      }
+    }
+  
+    input:focus + .slider {
+      box-shadow: 0 0 1px rgba(79, 209, 197, 1);
+    }
+  
+    .slider.round {
+      border-radius: 34px;
+  
+      &:before {
+        border-radius: 50%;
+      }
+    }
+  }
+  
