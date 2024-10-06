@@ -1,0 +1,26 @@
+
+.form-checkbox {
+    @apply rounded border-gray-300 text-blue-600 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50;
+}
+
+.form-radio {
+    @apply border-gray-300 text-blue-600 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+    @apply mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50;
+}
+
+.form-range {
+    @apply w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer;
+}
+
+.form-range::-webkit-slider-thumb {
+    @apply appearance-none w-6 h-6 bg-blue-500 rounded-full cursor-pointer;
+}
+
+.form-range::-moz-range-thumb {
+    @apply w-6 h-6 bg-blue-500 rounded-full cursor-pointer;
+}

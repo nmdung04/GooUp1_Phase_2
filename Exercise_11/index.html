@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 11</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <form id="sampleForm" class="max-w-md w-full mx-auto p-6 bg-white rounded-lg shadow-md">
+        <h2 class="text-2xl font-bold mb-6 text-center">Sample Form</h2>
+
+        <div class="space-y-4">
+            <div>
+                <label for="checkbox" class="flex items-center space-x-2 cursor-pointer">
+                    <input type="checkbox" id="checkbox" name="checkbox" class="form-checkbox">
+                    <span>Checkbox Input</span>
+                </label>
+            </div>
+
+            <div>
+                <label class="block mb-2">Radio Input</label>
+                <div class="flex space-x-4">
+                    <label class="inline-flex items-center">
+                        <input type="radio" name="radio" value="option1" class="form-radio">
+                        <span class="ml-2">Option 1</span>
+                    </label>
+                    <label class="inline-flex items-center">
+                        <input type="radio" name="radio" value="option2" class="form-radio">
+                        <span class="ml-2">Option 2</span>
+                    </label>
+                </div>
+            </div>
+
+            <div>
+                <label for="text" class="block mb-2">Text Input</label>
+                <input type="text" id="text" name="text" class="form-input mt-1 block w-full border-2">
+            </div>
+
+            <div>
+                <label for="color" class="block mb-2">Color Input</label>
+                <input type="color" id="color" name="color" class="form-input mt-1 block w-full h-10">
+            </div>
+
+            <div>
+                <label for="select" class="block mb-2">Select</label>
+                <select id="select" name="select" class="form-select mt-1 block w-full">
+                    <option value="">Select an option</option>
+                    <option value="option1">Select 1</option>
+                    <option value="option2">Select 2</option>
+                    <option value="option3">Select 3</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="date" class="block mb-2">Date Picker</label>
+                <input type="date" id="date" name="date" class="form-input mt-1 block w-full">
+            </div>
+
+            <div>
+                <label for="range" class="block mb-2">Range Slider</label>
+                <input type="range" id="range" name="range" min="0" max="100" class="form-range mt-1 block w-full">
+            </div>
+
+            <button type="submit" class="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-200">Submit</button>
+        </div>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>

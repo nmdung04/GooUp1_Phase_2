@@ -1,0 +1,16 @@
+.container {
+    container-type: size;
+    container-name:  container;
+    resize : vertical;
+    width: 50vw;
+    border: 1px solid #000;
+    height:50px;
+    overflow:  auto;
+
+}
+
+@container  ( height > 600px) {
+    .container {
+        background-color: #000;
+    }
+}
