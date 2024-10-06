@@ -1,0 +1,15 @@
+.input-type:active {
+    border: none;
+}
+.input-type:visited {
+    border: none;
+}
+.input-type:focus-visible {
+    border: none;
+}
+.input-type:focus {
+    border: none;
+}
+.input-type {
+    outline: none;
+}
