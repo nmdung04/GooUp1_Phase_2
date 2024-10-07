@@ -48,10 +48,10 @@ ul {
   box-shadow: 0px 3.5px 5.5px rgba(0, 0, 0, 0.02);
 }
 .nav-link.active > .icon-link > i {
-    color:  #4fd1c5;
+    color:  #fff;
 }
 .nav-link.active > .icon-link  {
-    background-color:  white;
+    background-color:  #4fd1c5;
     
 }
 .nav-item {
