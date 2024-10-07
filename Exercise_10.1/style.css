@@ -28,8 +28,6 @@ ul {
   position: fixed;
   padding-top: 27px;
   padding-left:  22px;
-
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 .main-content {
   margin-left: 250px;
@@ -44,12 +42,17 @@ ul {
   height: 54px;
 }
 .nav-link.active {
-  background-color: #4fd1c5;
+  background-color: white;
   color: #2D3748;
   border-radius: 12px;
+  box-shadow: 0px 3.5px 5.5px rgba(0, 0, 0, 0.02);
 }
 .nav-link.active > .icon-link > i {
     color:  #4fd1c5;
+}
+.nav-link.active > .icon-link  {
+    background-color:  white;
+    
 }
 .nav-item {
     max-height: 54px;
