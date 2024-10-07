@@ -45,7 +45,7 @@ ul {
 }
 .nav-link.active {
   background-color: #4fd1c5;
-  color: white;
+  color: #2D3748;
   border-radius: 12px;
 }
 .nav-link.active > .icon-link > i {
@@ -107,11 +107,6 @@ ul {
   margin-bottom: 5px;
   display: flex;
   align-items: center;
-}
-.nav-link.active {
-  background-color: #4fd1c5;
-  color: white;
-  border-radius: 12px;
 }
 
 .search-input {
