@@ -1,16 +1,186 @@
-.container {
-    container-type: size;
-    container-name:  container;
-    resize : vertical;
-    width: 50vw;
-    border: 1px solid #000;
-    height:50px;
-    overflow:  auto;
+body {
+  background-color: #f8f9fa;
+}
+html::-webkit-scrollbar {
+    display: none;
+}
+#menu {
+    width: 220px;
+    
+}
+.text-muted {
+    text-decoration : none;
+}
+.main-card {
+    height: 935px;
+}
+ul {
+    margin: 0 0 0 10px;
+}
+.heading{
+    font-size: 14px;
+    margin-top: 10px;
+}
+.sidebar {
+  background-color: #f8f9fa !important;
+  height: 100vh;
+  width: 270px;
+  position: fixed;
+  padding-top: 27px;
+  padding-left:  22px;
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.main-content {
+  margin-left: 250px;
+  padding: 20px 30px;
+}
+.nav-link {
+  color: #718096;
+  padding: 10px 15px;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  height: 54px;
+}
+.nav-link.active {
+  background-color: #4fd1c5;
+  color: white;
+  border-radius: 12px;
+}
+.nav-link.active > .icon-link > i {
+    color:  #4fd1c5;
+}
+.nav-item {
+    max-height: 54px;
+    font-size: 12px;
+}
+.icon-link {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 12px;
+    margin-right: 12px;
+}
+.nav-link i {
+  
+  width: 15px;
+  height:15px;
+  text-align: center;
+  color:  #4fd1c5;
+  
+}
+.account-pages {
+  color: #718096;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 10px 15px;
+  margin-top: 4px;
+  margin-left: 9px;
+  letter-spacing: 0.2px;
+}
+.search-input {
+  border-radius: 15px;
+  border: 1px solid #e2e8f0;
+}
+.user-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.user-actions .btn {
+  padding: 5px 10px;
+  font-size: 0.8rem;
+}
+
+.main-content {
+  margin-left: 250px;
+  padding: 20px 20px 20px  50px;
+
+}
+.nav-link {
+  color: #718096;
+  padding: 10px 15px;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+}
+.nav-link.active {
+  background-color: #4fd1c5;
+  color: white;
+  border-radius: 12px;
+}
+
+.search-input {
+  border-radius: 15px;
+  border: 1px solid #e2e8f0;
+  max-width: 200px;
+  margin-top: 2px;
+
+}
+.search-input > span {
+    font-size: 12px;
+    border-radius: 15px;
+    
+}
+.search-input > input {
+    border-radius: 15px;
+}
+.search-input > input::placeholder {
+    font-size: 12px;
+
+}
+.user-actions {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 131px;
+  margin-right: 15px;
+  gap: 22px;
+  margin-top: 5px;
+}
+
+.user-actions .btn {
+  padding: 5px 10px;
+  font-size: 0.8rem;
+}
+.sign-in-2 {
+    width: 100px;  
+}
+.main-card {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 1600px;
+  max-width: 1600px;
+}
+.pagi {
+    margin-top: 10px;
+    margin-left: 9px;
 
 }
 
-@container  ( height > 600px) {
-    .container {
-        background-color: #000;
-    }
+.user-actions > a {
+    text-decoration: none;
+    color: #718096;
+    font-size: 12px;
+}
+
+
+.breadcrumb {
+  font-size: 0.8rem;
+}
+.breadcrumb-item + .breadcrumb-item::before {
+  content: "/ ";
+  color: #000;
+}
+
+.breadcrumb {
+  font-size: 0.8rem;
+}
+.breadcrumb-item.active {
+    color: #000;
 }
