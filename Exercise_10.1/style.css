@@ -127,7 +127,13 @@ ul {
 }
 .search-input > input::placeholder {
     font-size: 12px;
+}
+.search-input > input:focus {
+    border: 1px  solid #718096;
 
+}
+.form-control:focus {
+    box-shadow: none !important;
 }
 .user-actions {
   display: flex;
