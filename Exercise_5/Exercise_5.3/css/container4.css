@@ -88,6 +88,8 @@
     .content-4 {
         padding: 10px;
         margin: 0;
+        width: 95dvw;
+        max-width: 700px;
     }
     .paragraph-4 {
         display:flex;
@@ -114,7 +116,7 @@
     .content-4 {
         padding: 10px;
         margin: 0;
-        width: 85vw;
+        width: 95dvw;
     }
     .paragraph-4 {
         display:flex;

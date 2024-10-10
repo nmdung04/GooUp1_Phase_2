@@ -220,6 +220,10 @@
         justify-content:center;
         flex-direction:column;
         text-align: center;
+        margin-top: 0;
+    }
+    .heading-2 {
+        margin-top: 0;
     }
 }
 @media (min-width: 375px) and (max-width: 526px) {
@@ -249,6 +253,10 @@
         justify-content:center;
         flex-direction:column;
         text-align: center;
+        margin-top: 0;
+    }
+    .heading-2 {
+        margin-top: 0;
     }
     .numering-image{
         width: 100%;

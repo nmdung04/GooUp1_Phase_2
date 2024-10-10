@@ -79,13 +79,23 @@
         align-items:center;
         justify-content:center;
         flex-direction:column;
-        gap: 20px;
+        gap: 70px;
         padding: 0;
     }
     .header-5 {
         display: flex;
         justify-content: center;
         align-items: center;
+        margin-top: 40px;
+    }
+    .title-5 {
+        margin: 0;
+        width: 90%;
+    }
+    .heading-5 {
+        text-align: center;
+        width: 100%;
+        
     }
     .card-item-5  {
      text-align: center;   
@@ -94,12 +104,17 @@
      justify-content:center;
      flex-direction:column;
      width: 100%;
-     max-width: 600px;
+     max-width: 700px;
      height: auto;
-     max-height: 500px;
+     max-height: 700px;
+    }
+    .card-screen{
+        height: 600px;
+        max-height: 600px;
     }
     .card-image {
         width: 100%;
+        
     }
 }
 
@@ -117,6 +132,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        margin-top: 40px;
     }
     .heading-5 {
         text-align: center;
@@ -133,5 +149,6 @@
      justify-content:center;
      flex-direction:column;
      width: 70%;
+     max-width: fit-content;
     }
 }
