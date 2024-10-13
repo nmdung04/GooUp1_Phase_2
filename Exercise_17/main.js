@@ -6,6 +6,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const formTitle = document.getElementById('form-title');
     const searchInput = document.getElementById('searchInput');
     const sortBtn = document.getElementById('sortBtn');
+    const filterForm = document.getElementById('filter-form');
+    const filterBtn = document.getElementById('filterBtn');
+    const resetFilterBtn = document.getElementById('resetFilterBtn');
+    const filterFaculty = document.getElementById('filter-faculty');
+    const filterGender = document.getElementById('filter-gender');
+    const filterYear = document.getElementById('filter-year');
     let students = [
         { name: "Nguyễn Văn An", studentId: "SV001", email: "nguyenvanan@example.com", faculty: "cntt", gender: "nam", birthdate: "2000-01-01" },
         { name: "Trần Thị Bình", studentId: "SV002", email: "tranthibinh@example.com", faculty: "kinh-te", gender: "nu", birthdate: "2001-02-15" },
@@ -23,9 +29,10 @@ document.addEventListener('DOMContentLoaded', function() {
         { name: "Hồ Thị Oanh", studentId: "SV014", email: "hothioanh@example.com", faculty: "dien-tu", gender: "nu", birthdate: "2001-08-11" },
         { name: "Dương Văn Phú", studentId: "SV015", email: "duongvanphu@example.com", faculty: "xay-dung", gender: "nam", birthdate: "1999-12-28" }
     ];
-    let sortOrder = 'asc';
 
-    function renderTable(studentsToRender = students) {
+    let filteredStudents = [...students];
+
+    function renderTable(studentsToRender = filteredStudents) {
         table.innerHTML = '';
         studentsToRender.forEach((student, index) => {
             addStudentToTable(student, index);
@@ -80,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function deleteStudent(index) {
         if (confirm('Bạn có chắc chắn muốn xóa sinh viên này?')) {
             students.splice(index, 1);
-            renderTable();
+            applyFilters();
         }
     }
 
@@ -103,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function() {
             students.push(student);
         }
 
-        renderTable();
+        applyFilters();
         form.reset();
         formContainer.style.display = 'none';
     });
@@ -135,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function formatDate(dateString) {
         const date = new Date(dateString);
-        return date.toLocaleDateString('vi-VN');
+        return  date.toLocaleDateString('vi-VN');
     }
 
     function debounce(func, delay) {
@@ -147,33 +154,54 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     const debouncedSearch = debounce(function(searchTerm) {
-        const filteredStudents = students.filter(student =>
+        filteredStudents = students.filter(student =>
             student.name.toLowerCase().includes(searchTerm.toLowerCase())
         );
-        renderTable(filteredStudents);
+        applyFilters();
     }, 300);
 
     searchInput.addEventListener('input', function(e) {
         debouncedSearch(e.target.value);
     });
 
-    function sortStudents() {
-        students.sort((a, b) => {
-            const nameA = a.name.toLowerCase();
-            const nameB = b.name.toLowerCase();
-            if (sortOrder === 'asc') {
-                return nameA.localeCompare(nameB);
-            } else {
-                return nameB.localeCompare(nameA);
-            }
+   
+
+
+
+    function populateFilterOptions() {
+        const years = [...new Set(students.map(student => new Date(student.birthdate).getFullYear()))];
+
+        years.sort((a, b) => b - a).forEach(year => {
+            const option = document.createElement('option');
+            option.value = year;
+            option.textContent = year;
+            filterYear.appendChild(option);
         });
-        sortOrder = sortOrder === 'asc' ? 'desc' : 'asc';
-        sortBtn.textContent = `Sắp xếp theo tên (${sortOrder === 'asc' ? 'A-Z' : 'Z-A'})`;
+    }
+
+    function applyFilters() {
+        const faculty = filterFaculty.value;
+        const gender = filterGender.value;
+        const year = filterYear.value;
+
+        filteredStudents = students.filter(student => {
+            return (faculty === 'all' || student.faculty === faculty) &&
+                   (gender === 'all' || student.gender === gender) &&
+                   (year === 'all' || new Date(student.birthdate).getFullYear().toString() === year);
+        });
+
         renderTable();
     }
 
-    sortBtn.addEventListener('click', sortStudents);
+    filterBtn.addEventListener('click', applyFilters);
 
-    // Initial render
+    resetFilterBtn.addEventListener('click', function() {
+        filterForm.reset();
+        filteredStudents = [...students];
+        renderTable();
+    });
+
+    // Initial setup
+    populateFilterOptions();
     renderTable();
 });

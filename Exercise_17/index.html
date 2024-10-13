@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercise 12 - Student Management</title>
+    <title>Exercise 17 - Student Management</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -60,11 +60,46 @@
                 </div>
             </form>
         </div>
+        <div class="filter-container">
+            <h2>Lọc Sinh viên</h2>
+            <form id="filter-form">
+                <div class="form-group">
+                    <label for="filter-faculty">Khoa:</label>
+                    <select id="filter-faculty" name="filter-faculty">
+                        <option value="all">Tất cả</option>
+                        <option value="cntt">Công nghệ thông tin</option>
+                        <option value="kinh-te">Kinh tế</option>
+                        <option value="co-khi">Cơ khí</option>
+                        <option value="dien-tu">Điện tử</option>
+                        <option value="xay-dung">Xây dựng</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="filter-gender">Giới tính:</label>
+                    <select id="filter-gender" name="filter-gender">
+                        <option value="all">Tất cả</option>
+                        <option value="nam">Nam</option>
+                        <option value="nu">Nữ</option>
+                        <option value="khac">Khác</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="filter-year">Năm sinh:</label>
+                    <select id="filter-year" name="filter-year">
+                        <option value="all">Tất cả</option>
+                    </select>
+                </div>
+                <div class="form-group filter-group-btn">
+                    <button type="button" id="filterBtn">Lọc</button>
+                    <button type="button" id="resetFilterBtn">Đặt lại</button>
+                </div>
+            </form>
+        </div>
         <div class="table-container">
             <h2>Danh sách Sinh viên</h2>
             <div class="search-container">
                 <input type="text" id="searchInput" placeholder="Tìm kiếm theo tên...">
-                <button id="sortBtn">Sắp xếp theo tên</button>
+           
             </div>
             <table id="student-table">
                 <thead>

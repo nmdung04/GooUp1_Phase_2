@@ -11,7 +11,7 @@ body {
     margin: 0 auto;
 }
 
-.form-container, .table-container {
+.form-container, .table-container, .filter-container {
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;
@@ -57,11 +57,11 @@ input[type="submit"]:hover, button:hover {
     background-color: #45a049;
 }
 
-#cancelBtn {
+#cancelBtn, #resetFilterBtn {
     background-color: #f44336;
 }
 
-#cancelBtn:hover {
+#cancelBtn:hover, #resetFilterBtn:hover {
     background-color: #d32f2f;
 }
 
@@ -126,18 +126,34 @@ tr:nth-child(even) {
     margin-right: 10px;
 }
 
-#sortBtn {
+ #filterBtn {
     background-color: #008CBA;
     color: white;
     padding: 10px 15px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    width: 150px;
+}
+.filter-group-btn {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.filter-group {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }
 
-#sortBtn:hover {
-    background-color: #007399;
+.filter-container form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filter-container .form-group {
+    flex: 1;
+    min-width: 200px;
 }
 
 @media screen and (max-width: 768px) {
@@ -145,7 +161,7 @@ tr:nth-child(even) {
         flex-direction: column;
     }
 
-    .form-container, .table-container {
+    .form-container, .table-container, .filter-container {
         width: 100%;
         margin-right: 0;
     }
@@ -157,5 +173,9 @@ tr:nth-child(even) {
     #searchInput, #sortBtn {
         width: 100%;
         margin-bottom: 10px;
+    }
+
+    .filter-container .form-group {
+        width: 100%;
     }
 }
