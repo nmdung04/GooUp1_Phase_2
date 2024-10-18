@@ -5,13 +5,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const cancelBtn = document.getElementById('cancelBtn');
     const formTitle = document.getElementById('form-title');
     const searchInput = document.getElementById('searchInput');
-    const sortBtn = document.getElementById('sortBtn');
     const filterForm = document.getElementById('filter-form');
     const filterBtn = document.getElementById('filterBtn');
     const resetFilterBtn = document.getElementById('resetFilterBtn');
     const filterFaculty = document.getElementById('filter-faculty');
     const filterGender = document.getElementById('filter-gender');
     const filterYear = document.getElementById('filter-year');
+    const paginationList = document.querySelector('.pagination-list');
+    const sortButtons = document.querySelectorAll('.sort-btn');
     let students = [
         { name: "Nguyễn Văn An", studentId: "SV001", email: "nguyenvanan@example.com", faculty: "cntt", gender: "nam", birthdate: "2000-01-01" },
         { name: "Trần Thị Bình", studentId: "SV002", email: "tranthibinh@example.com", faculty: "kinh-te", gender: "nu", birthdate: "2001-02-15" },
@@ -29,14 +30,23 @@ document.addEventListener('DOMContentLoaded', function() {
         { name: "Hồ Thị Oanh", studentId: "SV014", email: "hothioanh@example.com", faculty: "dien-tu", gender: "nu", birthdate: "2001-08-11" },
         { name: "Dương Văn Phú", studentId: "SV015", email: "duongvanphu@example.com", faculty: "xay-dung", gender: "nam", birthdate: "1999-12-28" }
     ];
-
     let filteredStudents = [...students];
+    let currentPage = 1;
+    const studentsPerPage = 10;
+    let currentSortColumn = '';
+    let currentSortOrder = 'asc';
 
-    function renderTable(studentsToRender = filteredStudents) {
+    function renderTable() {
+        const startIndex = (currentPage - 1) * studentsPerPage;
+        const endIndex = startIndex + studentsPerPage;
+        const studentsToRender = filteredStudents.slice(startIndex, endIndex);
+
         table.innerHTML = '';
         studentsToRender.forEach((student, index) => {
-            addStudentToTable(student, index);
+            addStudentToTable(student, startIndex + index);
         });
+
+        updatePagination();
     }
 
     function addStudentToTable(student, index) {
@@ -67,6 +77,69 @@ document.addEventListener('DOMContentLoaded', function() {
         deleteBtn.className = 'delete-btn';
         deleteBtn.onclick = () => deleteStudent(index);
         actionCell.appendChild(deleteBtn);
+    }
+
+    function updatePagination() {
+        const totalPages = Math.ceil(filteredStudents.length / studentsPerPage);
+        paginationList.innerHTML = '';
+
+        // Previous button
+        const prevLi = document.createElement('li');
+        prevLi.className = 'pagination-item';
+        const prevLink = document.createElement('a');
+        prevLink.href = '#';
+        prevLink.className = 'paginate-link';
+        prevLink.innerHTML = '&laquo;';
+        prevLink.onclick = (e) => {
+            e.preventDefault();
+            if (currentPage > 1) {
+                currentPage--;
+                renderTable();
+            }
+        };
+        prevLi.appendChild(prevLink);
+        paginationList.appendChild(prevLi);
+
+        // Page numbers
+        for (let  i = 1; i <= totalPages; i++) {
+            const li = document.createElement('li');
+            li.className = 'pagination-item';
+            const link = document.createElement('a');
+            link.href = '#';
+            link.className = 'paginate-link';
+            link.textContent = i;
+            if (i === currentPage) {
+                link.classList.add('active');
+            }
+            link.onclick = (e) => {
+                e.preventDefault();
+                currentPage = i;
+                renderTable();
+            };
+            li.appendChild(link);
+            paginationList.appendChild(li);
+        }
+
+        // Next button
+        const nextLi = document.createElement('li');
+        nextLi.className = 'pagination-item';
+        const nextLink = document.createElement('a');
+        nextLink.href = '#';
+        nextLink.className = 'paginate-link';
+        nextLink.innerHTML = '&raquo;';
+        nextLink.onclick = (e) => {
+            e.preventDefault();
+            if (currentPage < totalPages) {
+                currentPage++;
+                renderTable();
+            }
+        };
+        nextLi.appendChild(nextLink);
+        paginationList.appendChild(nextLi);
+
+        // Disable Previous and Next buttons when necessary
+        prevLink.classList.toggle('disabled', currentPage === 1);
+        nextLink.classList.toggle('disabled', currentPage === totalPages);
     }
 
     function editStudent(index) {
@@ -142,7 +215,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function formatDate(dateString) {
         const date = new Date(dateString);
-        return  date.toLocaleDateString('vi-VN');
+        return date.toLocaleDateString('vi-VN');
     }
 
     function debounce(func, delay) {
@@ -157,16 +230,13 @@ document.addEventListener('DOMContentLoaded', function() {
         filteredStudents = students.filter(student =>
             student.name.toLowerCase().includes(searchTerm.toLowerCase())
         );
-        applyFilters();
+        currentPage = 1;
+        renderTable();
     }, 300);
 
     searchInput.addEventListener('input', function(e) {
         debouncedSearch(e.target.value);
     });
-
-   
-
-
 
     function populateFilterOptions() {
         const years = [...new Set(students.map(student => new Date(student.birthdate).getFullYear()))];
@@ -190,6 +260,7 @@ document.addEventListener('DOMContentLoaded', function() {
                    (year === 'all' || new Date(student.birthdate).getFullYear().toString() === year);
         });
 
+        currentPage = 1;
         renderTable();
     }
 
@@ -198,7 +269,66 @@ document.addEventListener('DOMContentLoaded', function() {
     resetFilterBtn.addEventListener('click', function() {
         filterForm.reset();
         filteredStudents = [...students];
+        currentPage = 1;
         renderTable();
+    });
+
+    // Sorting functions
+    function quickSort(arr, left, right, compareFunc) {
+        if (left < right) {
+            const pivotIndex = partition(arr, left, right, compareFunc);
+            quickSort(arr, left, pivotIndex - 1, compareFunc);
+            quickSort(arr, pivotIndex + 1, right, compareFunc);
+        }
+    }
+
+    function partition(arr, left, right, compareFunc) {
+        const pivot = arr[right];
+        let i = left - 1;
+
+        for (let j = left; j < right; j++) {
+            if (compareFunc(arr[j], pivot) <= 0) {
+                i++;
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+            }
+        }
+
+        [arr[i + 1], arr[right]] = [arr[right], arr[i + 1]];
+        return i + 1;
+    }
+
+    function sortStudents(column) {
+        if (column === currentSortColumn) {
+            currentSortOrder = currentSortOrder === 'asc' ? 'desc' : 'asc';
+        } else {
+            currentSortColumn = column;
+            currentSortOrder = 'asc';
+        }
+
+        const compareFunc = (a, b) => {
+            let valueA = a[column];
+            let valueB = b[column];
+
+            if (column === 'birthdate') {
+                valueA = new Date(valueA);
+                valueB = new Date(valueB);
+            }
+
+            if (valueA < valueB) return currentSortOrder === 'asc' ? -1 : 1;
+            if (valueA > valueB) return currentSortOrder === 'asc' ? 1 : -1;
+            return 0;
+        };
+
+        quickSort(filteredStudents, 0, filteredStudents.length - 1, compareFunc);
+        renderTable();
+    }
+
+    // Add event listeners for sort buttons
+    sortButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const column = this.dataset.sort;
+            sortStudents(column);
+        });
     });
 
     // Initial setup

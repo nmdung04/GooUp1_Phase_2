@@ -99,17 +99,16 @@
             <h2>Danh sách Sinh viên</h2>
             <div class="search-container">
                 <input type="text" id="searchInput" placeholder="Tìm kiếm theo tên...">
-           
             </div>
             <table id="student-table">
                 <thead>
                     <tr>
-                        <th>Tên</th>
-                        <th>MSSV</th>
-                        <th>Email</th>
-                        <th>Khoa</th>
-                        <th>Giới tính</th>
-                        <th>Ngày sinh</th>
+                        <th>Tên <button class="sort-btn" data-sort="name">&#8645;</button></th>
+                        <th>MSSV <button class="sort-btn" data-sort="studentId">&#8645;</button></th>
+                        <th>Email <button class="sort-btn" data-sort="email">&#8645;</button></th>
+                        <th>Khoa <button class="sort-btn" data-sort="faculty">&#8645;</button></th>
+                        <th>Giới tính <button class="sort-btn" data-sort="gender">&#8645;</button></th>
+                        <th>Ngày sinh <button class="sort-btn" data-sort="birthdate">&#8645;</button></th>
                         <th>Hành động</th>
                     </tr>
                 </thead>
@@ -120,8 +119,11 @@
         </div>
         <div class="pagination-block">
             <ul class="pagination-list">
-                <!--   Pagination links will be inserted here -->
-
+                <li class="pagination-item"><a href="#" class="paginate-link">&laquo;</a></li>
+                <li class="pagination-item"><a href="#" class="paginate-link">1</a></li>
+                <li class="pagination-item"><a href="#" class="paginate-link">2</a></li>
+                <li class="pagination-item"><a href="#" class="paginate-link">3</a></li>
+                <li class="pagination-item"><a href="#" class="paginate-link">&raquo;</a></li>
             </ul>
         </div>
     </div>
