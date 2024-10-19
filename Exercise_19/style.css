@@ -156,6 +156,58 @@ tr:nth-child(even) {
     min-width: 200px;
 }
 
+.pagination-block {
+    margin: 40px auto 50px;
+    
+}
+.pagination-list{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:row;
+    list-style: none;
+    
+   
+}
+.pagination-item{
+    margin: 0 10px;
+}
+.paginate-link{
+    text-decoration: none;
+    color: #333;
+    padding: 10px 15px;
+    border-radius: 999px;
+    text-align: center;
+    font-weight: 500;
+}
+.paginate-link:hover {
+    background-color: #008CBA;
+    color: white;
+}
+.paginate-link.active{
+    background-color: #0b7dda;
+    color: white;
+}
+.paginate-link.disabled {
+    opacity: 0.5;
+}
+.paginate-link.disabled:hover {
+    background: none;
+    color: #333;
+    cursor: default;
+}
+.sort-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 0 5px;
+    color: #333;
+}
+
+.sort-btn:hover {
+    color: #4CAF50;
+}
 @media screen and (max-width: 768px) {
     .container {
         flex-direction: column;
