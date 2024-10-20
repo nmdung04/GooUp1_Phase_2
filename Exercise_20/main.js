@@ -75,10 +75,51 @@ document.addEventListener('DOMContentLoaded', function() {
         const deleteBtn = document.createElement('button');
         deleteBtn.textContent = 'Xóa';
         deleteBtn.className = 'delete-btn';
-        deleteBtn.onclick = () => deleteStudent(index);
+        deleteBtn.onclick = () => deleteStudent(index); 
         actionCell.appendChild(deleteBtn);
+        // console.log("Nút Xóa đã được thêm vào hàng:", row);
     }
 
+  
+    let studentToDeleteIndex = null; 
+    function deleteStudent(index) {
+        console.log(`Gọi hàm deleteStudent với chỉ số: ${index}`);
+        studentToDeleteIndex = index;
+        document.getElementById('deleteModal').style.display = 'block';
+        document.getElementById('modalOverlay').style.display = 'block';
+        
+    }
+
+    document.getElementById('confirmDeleteBtn').onclick = function() {
+        console.log("Đã nhấn nút xác nhận xóa"); 
+        if (studentToDeleteIndex !== null) {
+            students.splice(studentToDeleteIndex, 1);
+            applyFilters();
+            document.getElementById('deleteModal').style.display = 'none';
+            document.getElementById('modalOverlay').style.display = 'none';
+            studentToDeleteIndex = null;
+        }
+    };
+    document.getElementById('cancelDeleteBtn').onclick = function() {
+        console.log("Đã nhấn nút hủy"); 
+        document.getElementById('deleteModal').style.display = 'none';
+        document.getElementById('modalOverlay').style.display = 'none';
+        studentToDeleteIndex = null;
+    };
+    document.getElementById('modalOverlay').onclick = function(event) {
+        if (event.target === this) {
+            this.style.display = 'none';
+            document.getElementById('deleteModal').style.display = 'none';
+            studentToDeleteIndex = null;
+        }
+    };
+
+   
+    document.getElementById('closeModal').onclick = function() {
+        document.getElementById('deleteModal').style.display = 'none'
+        document.getElementById('modalOverlay').style.display = 'none';; 
+        studentToDeleteIndex = null; 
+    }
     function updatePagination() {
         const totalPages = Math.ceil(filteredStudents.length / studentsPerPage);
         paginationList.innerHTML = '';
@@ -157,12 +198,12 @@ document.addEventListener('DOMContentLoaded', function() {
         window.scrollTo(0, 0);
     }
 
-    function deleteStudent(index) {
-        if (confirm('Bạn có chắc chắn muốn xóa sinh viên này?')) {
-            students.splice(index, 1);
-            applyFilters();
-        }
-    }
+    // function deleteStudent(index) {
+    //     if (confirm('Bạn có chắc chắn muốn xóa sinh viên này?')) {
+    //         students.splice(index, 1);
+    //         applyFilters();
+    //     }
+    // }
 
     form.addEventListener('submit', function(e) {
         e.preventDefault();
@@ -304,7 +345,7 @@ document.addEventListener('DOMContentLoaded', function() {
             currentSortColumn = column;
             currentSortOrder = 'asc';
         }
-        
+
         const compareFunc = (a, b) => {
             let valueA = a[column];
             let valueB = b[column];
@@ -314,10 +355,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 valueB = new Date(valueB);
             }
 
-            if (column ==='name'){
-                valueA = valueA.split(' ').pop().toLowerCase();
-                valueB = valueB.split(' ').pop().toLowerCase();
-            }
             if (valueA < valueB) return currentSortOrder === 'asc' ? -1 : 1;
             if (valueA > valueB) return currentSortOrder === 'asc' ? 1 : -1;
             return 0;
@@ -338,6 +375,4 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initial setup
     populateFilterOptions();
     renderTable();
-    
-    
 });
