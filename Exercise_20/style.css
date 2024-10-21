@@ -279,6 +279,7 @@ tr:nth-child(even) {
 }
 .sort-btn:hover {
     color: #4CAF50;
+    color: white;
 }
 @media screen and (max-width: 768px) {
     .container {
