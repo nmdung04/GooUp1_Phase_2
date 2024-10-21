@@ -204,6 +204,21 @@ tr:nth-child(even) {
     padding: 0 5px;
     color: #333;
 }
+.sort-btn::after {
+    content: '⇅'; /* Unicode cho biểu tượng mũi tên lên xuống */
+}
+
+.sort-btn.asc::after {
+    content: '↑'; /* Unicode cho mũi tên lên */
+}
+
+.sort-btn.desc::after {
+    content: '↓'; /* Unicode cho mũi tên xuống */
+}
+
+.sort-btn.default::after {
+    content: '⇅'; /* Unicode cho biểu tượng mũi tên lên xuống */
+}
 
 .sort-btn:hover {
     color: #4CAF50;

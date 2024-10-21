@@ -383,28 +383,52 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function sortStudents(column) {
         if (column === currentSortColumn) {
-            currentSortOrder = currentSortOrder === 'asc' ? 'desc' : 'asc';
+            // Chuyển đổi giữa các trạng thái sắp xếp
+            currentSortOrder = currentSortOrder === 'asc' ? 'desc' : 
+                               currentSortOrder === 'desc' ? 'default' : 'asc';
         } else {
             currentSortColumn = column;
             currentSortOrder = 'asc';
         }
-
-        const compareFunc = (a, b) => {
-            let valueA = a[column];
-            let valueB = b[column];
-
-            if (column === 'birthdate') {
-                valueA = new Date(valueA);
-                valueB = new Date(valueB);
-            }
-
-            if (valueA < valueB) return currentSortOrder === 'asc' ? -1 : 1;
-            if (valueA > valueB) return currentSortOrder === 'asc' ? 1 : -1;
-            return 0;
-        };
-
-        quickSort(filteredStudents, 0, filteredStudents.length - 1, compareFunc);
+        
+        if (currentSortOrder === 'default') {
+            // Khôi phục thứ tự mặc định
+            filteredStudents = [...students];
+        } else {
+            const compareFunc = (a, b) => {
+                let valueA = a[column];
+                let valueB = b[column];
+    
+                if (column === 'birthdate') {
+                    valueA = new Date(valueA);
+                    valueB = new Date(valueB);
+                }
+    
+                if (column === 'name'){
+                    valueA = valueA.split(' ').pop().toLowerCase();
+                    valueB = valueB.split(' ').pop().toLowerCase();
+                }
+                if (valueA < valueB) return currentSortOrder === 'asc' ? -1 : 1;
+                if (valueA > valueB) return currentSortOrder === 'asc' ? 1 : -1;
+                return 0;
+            };
+    
+            quickSort(filteredStudents, 0, filteredStudents.length - 1, compareFunc);
+        }
+        
         renderTable();
+        updateSortButtons();
+    }
+    function updateSortButtons() {
+        sortButtons.forEach(button => {
+            const column = button.dataset.sort;
+            if (column === currentSortColumn) {
+                button.classList.remove('asc', 'desc', 'default');
+                button.classList.add(currentSortOrder);
+            } else {
+                button.classList.remove('asc', 'desc', 'default');
+            }
+        });
     }
 
     // Add event listeners for sort buttons
