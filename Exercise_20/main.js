@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const paginationList = document.querySelector('.pagination-list');
     const sortButtons = document.querySelectorAll('.sort-btn');
     let students = [
+        // 15 sinh viên ban đầu
         { name: "Nguyễn Văn An", studentId: "SV001", email: "nguyenvanan@example.com", faculty: "cntt", gender: "nam", birthdate: "2000-01-01" },
         { name: "Trần Thị Bình", studentId: "SV002", email: "tranthibinh@example.com", faculty: "kinh-te", gender: "nu", birthdate: "2001-02-15" },
         { name: "Lê Văn Cường", studentId: "SV003", email: "levancuong@example.com", faculty: "co-khi", gender: "nam", birthdate: "1999-12-10" },
@@ -28,7 +29,49 @@ document.addEventListener('DOMContentLoaded', function() {
         { name: "Võ Thị Mỹ", studentId: "SV012", email: "vothimy@example.com", faculty: "kinh-te", gender: "nu", birthdate: "1999-10-31" },
         { name: "Đinh Văn Năm", studentId: "SV013", email: "dinhvannam@example.com", faculty: "co-khi", gender: "nam", birthdate: "2000-04-02" },
         { name: "Hồ Thị Oanh", studentId: "SV014", email: "hothioanh@example.com", faculty: "dien-tu", gender: "nu", birthdate: "2001-08-11" },
-        { name: "Dương Văn Phú", studentId: "SV015", email: "duongvanphu@example.com", faculty: "xay-dung", gender: "nam", birthdate: "1999-12-28" }
+        { name: "Dương Văn Phú", studentId: "SV015", email: "duongvanphu@example.com", faculty: "xay-dung", gender: "nam", birthdate: "1999-12-28" },
+    
+        // 40 sinh viên mới
+        { name: "Lê Thị Quỳnh", studentId: "SV016", email: "lethiquynh@example.com", faculty: "cntt", gender: "nu", birthdate: "2000-03-15" },
+        { name: "Trần Văn Rồng", studentId: "SV017", email: "tranvanrong@example.com", faculty: "kinh-te", gender: "nam", birthdate: "2001-07-22" },
+        { name: "Phạm Thị Sương", studentId: "SV018", email: "phamthisuong@example.com", faculty: "co-khi", gender: "nu", birthdate: "1999-11-30" },
+        { name: "Hoàng Văn Tâm", studentId: "SV019", email: "hoangvantam@example.com", faculty: "dien-tu", gender: "nam", birthdate: "2000-09-05" },
+        { name: "Ngô Thị Uyên", studentId: "SV020", email: "ngothiuyen@example.com", faculty: "xay-dung", gender: "nu", birthdate: "2001-02-18" },
+        { name: "Đặng Văn Vũ", studentId: "SV021", email: "dangvanvu@example.com", faculty: "cntt", gender: "nam", birthdate: "1999-06-27" },
+        { name: "Bùi Thị Xuân", studentId: "SV022", email: "buithixuan@example.com", faculty: "kinh-te", gender: "nu", birthdate: "2000-12-10" },
+        { name: "Trương Văn Yến", studentId: "SV023", email: "truongvanyen@example.com", faculty: "co-khi", gender: "nam", birthdate: "2001-04-03" },
+        { name: "Lý Thị Zara", studentId: "SV024", email: "lythizara@example.com", faculty: "dien-tu", gender: "nu", birthdate: "1999-08-20" },
+        { name: "Mai Văn Anh", studentId: "SV025", email: "maivananh@example.com", faculty: "xay-dung", gender: "nam", birthdate: "2000-01-25" },
+        { name: "Nguyễn Thị Ánh", studentId: "SV026", email: "nguyenthianh@example.com", faculty: "cntt", gender: "nu", birthdate: "2001-06-12" },
+        { name: "Trần Văn Bằng", studentId: "SV027", email: "tranvanbang@example.com", faculty: "kinh-te", gender: "nam", birthdate: "1999-09-15" },
+        { name: "Phạm Thị Bích", studentId: "SV028", email: "phamthibich@example.com", faculty: "co-khi", gender: "nu", birthdate: "2000-05-28" },
+        { name: "Hoàng Văn Cảnh", studentId: "SV029", email: "hoangvancanh@example.com", faculty: "dien-tu", gender: "nam", birthdate: "2001-10-01" },
+        { name: "Ngô Thị Chi", studentId: "SV030", email: "ngothichi@example.com", faculty: "xay-dung", gender: "nu", birthdate: "1999-07-25" },
+        { name: "Đặng Văn Chung", studentId: "SV031", email: "dangvanchung@example.com", faculty: "cntt", gender: "nam", birthdate: "2000-02-20" },
+        { name: "Bùi Thị Dung", studentId: "SV032", email: "buithidung@example.com", faculty: "kinh-te", gender: "nu", birthdate: "2001-08-15" },
+        { name: "Trương Văn Duy", studentId: "SV033", email: "truongvanduy@example.com", faculty: "co-khi", gender: "nam", birthdate: "1999-10-12" },
+        { name: "Lý Thị E", studentId: "SV034", email: "lythie@example.com", faculty: "dien-tu", gender: "nu", birthdate: "2000-11-22" },
+        { name: "Mai Văn Giang", studentId: "SV035", email: "maivangi@example.com", faculty: "xay -dung", gender: "nam", birthdate: "2001-03-01" },
+        { name: "Nguyễn Thị Hà", studentId: "SV036", email: "nguyenthinha@example.com", faculty: "cntt", gender: "nu", birthdate: "1999-05-15" },
+        { name: "Trần Văn Hậu", studentId: "SV037", email: "tranvanhau@example.com", faculty: "kinh-te", gender: "nam", birthdate: "2000-09-28" },
+        { name: "Phạm Thị Hồng", studentId: "SV038", email: "phamthihong@example.com", faculty: "co-khi", gender: "nu", birthdate: "2001-01-05" },
+        { name: "Hoàng Văn Hưng", studentId: "SV039", email: "hoangvanhung@example.com", faculty: "dien-tu", gender: "nam", birthdate: "1999-08-10" },
+        { name: "Ngô Thị Hương", studentId: "SV040", email: "ngothihu@example.com", faculty: "xay-dung", gender: "nu", birthdate: "2000-06-25" },
+        { name: "Đặng Văn Huy", studentId: "SV041", email: "dangvanhuy@example.com", faculty: "cntt", gender: "nam", birthdate: "2001-02-01" },
+        { name: "Bùi Thị Huyền", studentId: "SV042", email: "buithihuyen@example.com", faculty: "kinh-te", gender: "nu", birthdate: "1999-09-20" },
+        { name: "Trương Văn Khánh", studentId: "SV043", email: "truongvankhanh@example.com", faculty: "co-khi", gender: "nam", birthdate: "2000-10-15" },
+        { name: "Lý Thị Lan", studentId: "SV044", email: "lythilan@example.com", faculty: "dien-tu", gender: "nu", birthdate: "2001-04-10" },
+        { name: "Mai Văn Lân", studentId: "SV045", email: "maivanlan@example.com", faculty: "xay-dung", gender: "nam", birthdate: "1999-07-01" },
+        { name: "Nguyễn Thị Linh", studentId: "SV046", email: "nguyenthilinh@example.com", faculty: "cntt", gender: "nu", birthdate: "2000-03-20" },
+        { name: "Trần Văn Long", studentId: "SV047", email: "tranvanlong@example.com", faculty: "kinh-te", gender: "nam", birthdate: "2001-09-25" },
+        { name: "Phạm Thị Mai", studentId: "SV048", email: "phamthimai@example.com", faculty: "co-khi", gender: "nu", birthdate: "1999-11-15" },
+        { name: "Hoàng Văn Minh", studentId: "SV049", email: "hoangvanminh@example.com", faculty: "dien-tu", gender: "nam", birthdate: "2000-05-10" },
+        { name: "Ngô Thị Nga", studentId: "SV050", email: "ngothinga@example.com", faculty: "xay-dung", gender: "nu", birthdate: "2001-01-15" },
+        { name: "Đặng Văn Ninh", studentId: "SV051", email: "dangvanninh@example.com", faculty: "cntt", gender: "nam", birthdate: "1999-06-01" },
+        { name: "Bùi Thị Oanh", studentId: "SV052", email: "buithioanh@example.com", faculty: "kinh-te", gender: "nu", birthdate: "2000-08-20" },
+        { name: "Trương Văn Phong", studentId: "SV053", email: "truongvanphong@example.com", faculty: "co-khi", gender: "nam", birthdate: "2001-03-25" },
+        { name: "Hồ Thị Linh", studentId: "SV054", email: "hothilinh@example.com", faculty: "dien-tu", gender: "nu", birthdate: "2001-11-07" },
+        { name: "Dương Văn Minh", studentId: "SV055", email: "duongvanminh@example.com", faculty: "xay-dung", gender: "nam", birthdate: "1999-09-30" }
     ];
     let filteredStudents = [...students];
     let currentPage = 1;

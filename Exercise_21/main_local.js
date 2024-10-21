@@ -79,6 +79,43 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentSortColumn = '';
     let currentSortOrder = 'asc';
 
+    // Load students and filters from sessionStorage
+    function loadStudentsFromSession() {
+        const storedStudents = sessionStorage.getItem('students');
+        if (storedStudents) {
+            students = JSON.parse(storedStudents);
+        }
+        filteredStudents = [...students];
+    }
+
+    function loadFiltersFromSession() {
+        const storedFilters = sessionStorage.getItem('filters');
+        if (storedFilters) {
+            const filters = JSON.parse(storedFilters);
+            filterFaculty.value = filters.faculty || 'all';
+            filterGender.value = filters.gender || 'all';
+            filterYear.value = filters.year || 'all';
+            searchInput.value = filters.search || '';
+            currentPage = filters.currentPage || 1;
+        }
+    }
+
+    // Save students and filters to sessionStorage
+    function saveStudentsToSession() {
+        sessionStorage.setItem('students', JSON.stringify(students));
+    }
+
+    function saveFiltersToSession() {
+        sessionStorage.setItem('filters', JSON.stringify({
+            faculty: filterFaculty.value,
+            gender: filterGender.value,
+            year: filterYear.value,
+            search: searchInput.value,
+            currentPage: currentPage
+        }));
+    }
+
+    // Render the student table
     function renderTable() {
         const startIndex = (currentPage - 1) * studentsPerPage;
         const endIndex = startIndex + studentsPerPage;
@@ -92,6 +129,7 @@ document.addEventListener('DOMContentLoaded', function() {
         updatePagination();
     }
 
+    // Add student row to table
     function addStudentToTable(student, index) {
         const row = table.insertRow();
         const cells = [
@@ -122,6 +160,32 @@ document.addEventListener('DOMContentLoaded', function() {
         actionCell.appendChild(deleteBtn);
     }
 
+    // Delete student
+    let studentToDeleteIndex = null;
+    function deleteStudent(index) {
+        studentToDeleteIndex = index;
+        document.getElementById('deleteModal').style.display = 'block';
+        document.getElementById('modalOverlay').style.display = 'block';
+    }
+
+    document.getElementById('confirmDeleteBtn').onclick = function() {
+        if (studentToDeleteIndex !== null) {
+            students.splice(studentToDeleteIndex, 1);
+            saveStudentsToSession();
+            applyFilters();
+            studentToDeleteIndex = null;
+        }
+        document.getElementById('deleteModal').style.display = 'none';
+        document.getElementById('modalOverlay').style.display = 'none';
+    };
+
+    document.getElementById('cancelDeleteBtn').onclick = function() {
+        document.getElementById('deleteModal').style.display = 'none';
+        document.getElementById('modalOverlay').style.display = 'none';
+        studentToDeleteIndex = null;
+    };
+
+    // Update pagination
     function updatePagination() {
         const totalPages = Math.ceil(filteredStudents.length / studentsPerPage);
         paginationList.innerHTML = '';
@@ -144,22 +208,22 @@ document.addEventListener('DOMContentLoaded', function() {
         paginationList.appendChild(prevLi);
 
         // Page numbers
-        for (let  i = 1; i <= totalPages; i++) {
+        for (let i = 1; i <= totalPages; i++) {
             const li = document.createElement('li');
             li.className = 'pagination-item';
-            const link = document.createElement('a');
-            link.href = '#';
-            link.className = 'paginate-link';
-            link.textContent = i;
+            const a = document.createElement('a');
+            a.href = '#';
+            a.className = 'paginate-link';
+            a.textContent = i;
             if (i === currentPage) {
-                link.classList.add('active');
+                a.classList.add('active');
             }
-            link.onclick = (e) => {
+            a.onclick = (e) => {
                 e.preventDefault();
                 currentPage = i;
                 renderTable();
             };
-            li.appendChild(link);
+            li.appendChild(a);
             paginationList.appendChild(li);
         }
 
@@ -179,34 +243,29 @@ document.addEventListener('DOMContentLoaded', function() {
         };
         nextLi.appendChild(nextLink);
         paginationList.appendChild(nextLi);
-
-        // Disable Previous and Next buttons when necessary
-        prevLink.classList.toggle('disabled', currentPage === 1);
-        nextLink.classList.toggle('disabled', currentPage === totalPages);
     }
 
-    function editStudent(index) {
-        const student = students[index];
-        document.getElementById('editIndex').value = index;
-        document.getElementById('name').value = student.name;
-        document.getElementById('studentId').value = student.studentId;
-        document.getElementById('email').value = student.email;
-        document.getElementById('faculty').value = student.faculty;
-        document.getElementById('gender').value = student.gender;
-        document.getElementById('birthdate').value = student.birthdate;
+    // Apply filters
+    function applyFilters() {
+        const faculty = filterFaculty.value;
+        const gender = filterGender.value;
+        const year = filterYear.value;
+        const searchText = searchInput.value.toLowerCase();
 
-        formTitle.textContent = 'Chỉnh sửa Sinh viên';
-        formContainer.style.display = 'block';
-        window.scrollTo(0, 0);
+        filteredStudents = students.filter(student => {
+            const matchFaculty = faculty === 'all' || student.faculty === faculty;
+            const matchGender = gender === 'all' || student.gender === gender;
+            const matchYear = year === 'all' || new Date(student.birthdate).getFullYear().toString() === year;
+            const matchSearch = student.name.toLowerCase().includes(searchText) || student.studentId.includes(searchText);
+            return matchFaculty && matchGender && matchYear && matchSearch;
+        });
+
+        currentPage = 1;
+        saveFiltersToSession();
+        renderTable();
     }
 
-    function deleteStudent(index) {
-        if (confirm('Bạn có chắc chắn muốn xóa sinh viên này?')) {
-            students.splice(index, 1);
-            applyFilters();
-        }
-    }
-
+    // Handle form submit
     form.addEventListener('submit', function(e) {
         e.preventDefault();
 
@@ -226,161 +285,88 @@ document.addEventListener('DOMContentLoaded', function() {
             students.push(student);
         }
 
+        saveStudentsToSession();
         applyFilters();
         form.reset();
         formContainer.style.display = 'none';
     });
 
-    cancelBtn.addEventListener('click', function() {
+    // Edit student
+    function editStudent(index) {
+        const student = students[index];
+        formTitle.textContent = 'Chỉnh sửa sinh viên';
+        document.getElementById('name').value = student.name;
+        document.getElementById('studentId').value = student.studentId;
+        document.getElementById('email').value = student.email;
+        document.getElementById('faculty').value = student.faculty;
+        document.getElementById('gender').value = student.gender;
+        document.getElementById('birthdate').value = student.birthdate;
+        document.getElementById('editIndex').value = index;
+        formContainer.style.display = 'block';
+    }
+
+    // Cancel form
+    cancelBtn.onclick = function() {
         form.reset();
         formContainer.style.display = 'none';
-    });
+    };
 
-    function getFacultyName(value) {
-        const faculties = {
-            'cntt': 'Công nghệ thông tin',
-            'kinh-te': 'Kinh tế',
-            'co-khi': 'Cơ khí',
-            'dien-tu': 'Điện tử',
-            'xay-dung': 'Xây dựng'
-        };
-        return faculties[value] || value;
-    }
-
-    function getGenderName(value) {
-        const genders = {
-            'nam': 'Nam',
-            'nu': 'Nữ',
-            'khac': 'Khác'
-        };
-        return genders[value] || value;
-    }
-
+    // Format date
     function formatDate(dateString) {
         const date = new Date(dateString);
-        return date.toLocaleDateString('vi-VN');
+        return `${date.getDate().toString().padStart(2, '0')}/${(date.getMonth() + 1).toString().padStart(2, '0')}/${date.getFullYear()}`;
     }
 
-    function debounce(func, delay) {
-        let timeoutId;
-        return function (...args) {
-            clearTimeout(timeoutId);
-            timeoutId = setTimeout(() => func.apply(this, args), delay);
-        };
+    // Get faculty and gender names
+    function getFacultyName(facultyValue) {
+        switch (facultyValue) {
+            case 'cntt':
+                return 'Công nghệ thông tin';
+            case 'kinh-te':
+                return 'Kinh tế';
+            case 'co-khi':
+                return 'Cơ khí';
+            case 'dien-tu':
+                return 'Điện tử';
+            case 'xay-dung':
+                return 'Xây dựng';
+            default:
+                return '';
+        }
     }
 
-    const debouncedSearch = debounce(function(searchTerm) {
-        filteredStudents = students.filter(student =>
-            student.name.toLowerCase().includes(searchTerm.toLowerCase())
-        );
-        currentPage = 1;
-        renderTable();
-    }, 300);
+    function getGenderName(genderValue) {
+        switch (genderValue) {
+            case 'nam':
+                return 'Nam';
+            case 'nu':
+                return 'Nữ';
+            default:
+                return '';
+        }
+    }
 
-    searchInput.addEventListener('input', function(e) {
-        debouncedSearch(e.target.value);
+    // Initial load
+    loadStudentsFromSession();
+    loadFiltersFromSession();
+    applyFilters();
+    renderTable();
+
+    // Handle filter apply and reset
+    filterBtn.addEventListener('click', function() {
+        applyFilters();
     });
-
-    function populateFilterOptions() {
-        const years = [...new Set(students.map(student => new Date(student.birthdate).getFullYear()))];
-
-        years.sort((a, b) => b - a).forEach(year => {
-            const option = document.createElement('option');
-            option.value = year;
-            option.textContent = year;
-            filterYear.appendChild(option);
-        });
-    }
-
-    function applyFilters() {
-        const faculty = filterFaculty.value;
-        const gender = filterGender.value;
-        const year = filterYear.value;
-
-        filteredStudents = students.filter(student => {
-            return (faculty === 'all' || student.faculty === faculty) &&
-                   (gender === 'all' || student.gender === gender) &&
-                   (year === 'all' || new Date(student.birthdate).getFullYear().toString() === year);
-        });
-
-        currentPage = 1;
-        renderTable();
-    }
-
-    filterBtn.addEventListener('click', applyFilters);
 
     resetFilterBtn.addEventListener('click', function() {
         filterForm.reset();
         filteredStudents = [...students];
         currentPage = 1;
+        saveFiltersToSession();
         renderTable();
     });
 
-    // Sorting functions
-    function quickSort(arr, left, right, compareFunc) {
-        if (left < right) {
-            const pivotIndex = partition(arr, left, right, compareFunc);
-            quickSort(arr, left, pivotIndex - 1, compareFunc);
-            quickSort(arr, pivotIndex + 1, right, compareFunc);
-        }
-    }
-
-    function partition(arr, left, right, compareFunc) {
-        const pivot = arr[right];
-        let i = left - 1;
-
-        for (let j = left; j < right; j++) {
-            if (compareFunc(arr[j], pivot) <= 0) {
-                i++;
-                [arr[i], arr[j]] = [arr[j], arr[i]];
-            }
-        }
-
-        [arr[i + 1], arr[right]] = [arr[right], arr[i + 1]];
-        return i + 1;
-    }
-
-    function sortStudents(column) {
-        if (column === currentSortColumn) {
-            currentSortOrder = currentSortOrder === 'asc' ? 'desc' : 'asc';
-        } else {
-            currentSortColumn = column;
-            currentSortOrder = 'asc';
-        }
-        
-        const compareFunc = (a, b) => {
-            let valueA = a[column];
-            let valueB = b[column];
-
-            if (column === 'birthdate') {
-                valueA = new Date(valueA);
-                valueB = new Date(valueB);
-            }
-
-            if (column ==='name'){
-                valueA = valueA.split(' ').pop().toLowerCase();
-                valueB = valueB.split(' ').pop().toLowerCase();
-            }
-            if (valueA < valueB) return currentSortOrder === 'asc' ? -1 : 1;
-            if (valueA > valueB) return currentSortOrder === 'asc' ? 1 : -1;
-            return 0;
-        };
-
-        quickSort(filteredStudents, 0, filteredStudents.length - 1, compareFunc);
-        renderTable();
-    }
-
-    // Add event listeners for sort buttons
-    sortButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const column = this.dataset.sort;
-            sortStudents(column);
-        });
+    // Handle search input change
+    searchInput.addEventListener('input', function() {
+        applyFilters();
     });
-
-    // Initial setup
-    populateFilterOptions();
-    renderTable();
-    
-    
 });
