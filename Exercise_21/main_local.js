@@ -79,9 +79,9 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentSortColumn = '';
     let currentSortOrder = 'asc';
 
-    // Load students and filters from sessionStorage
+    // Load students and filters from localStorage
     function loadStudentsFromSession() {
-        const storedStudents = sessionStorage.getItem('students');
+        const storedStudents = localStorage.getItem('students');
         if (storedStudents) {
             students = JSON.parse(storedStudents);
         }
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function loadFiltersFromSession() {
-        const storedFilters = sessionStorage.getItem('filters');
+        const storedFilters = localStorage.getItem('filters');
         if (storedFilters) {
             const filters = JSON.parse(storedFilters);
             filterFaculty.value = filters.faculty || 'all';
@@ -100,13 +100,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Save students and filters to sessionStorage
+    // Save students and filters to localStorage
     function saveStudentsToSession() {
-        sessionStorage.setItem('students', JSON.stringify(students));
+        localStorage.setItem('students', JSON.stringify(students));
     }
 
     function saveFiltersToSession() {
-        sessionStorage.setItem('filters', JSON.stringify({
+        localStorage.setItem('filters', JSON.stringify({
             faculty: filterFaculty.value,
             gender: filterGender.value,
             year: filterYear.value,
