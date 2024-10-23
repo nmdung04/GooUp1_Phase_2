@@ -154,12 +154,36 @@ document.addEventListener('DOMContentLoaded', function() {
             if (i === currentPage) {
                 link.classList.add('active');
             }
+            
+            //Hide the link if it's not in the current page
+            if (i === 1 || i === totalPages) {
+                link.classList.remove('hide');
+                
+            }
+            else if (i >= currentPage - 1 && i <= currentPage + 1) {
+                link.classList.remove('hide');
+            } 
+            else {
+                link.classList.add('hide');
+                if (i === currentPage - 2 || i === currentPage + 2) {
+                    link.textContent = '...';
+                    link.classList.remove('hide');  
+                }
+            }
             link.onclick = (e) => {
                 e.preventDefault();
                 currentPage = i;
                 renderTable();
             };
             li.appendChild(link);
+            if (li.children[0].classList.contains('hide')) {
+                li.style.margin = 0;
+            }
+            if (link.textContent ==='...')
+            {
+                link.style.pointerEvents = 'none';
+                // link.classList.add('no-select');
+            }
             paginationList.appendChild(li);
         }
 

@@ -218,12 +218,36 @@ document.addEventListener('DOMContentLoaded', function() {
             if (i === currentPage) {
                 a.classList.add('active');
             }
+            
+            //Hide the link if it's not in the current page
+            if (i === 1 || i === totalPages) {
+                a.classList.remove('hide');
+                
+            }
+            else if (i >= currentPage - 1 && i <= currentPage + 1) {
+                a.classList.remove('hide');
+            } 
+            else {
+                a.classList.add('hide');
+                if (i === currentPage - 2 || i === currentPage + 2) {
+                    a.textContent = '...';
+                    a.classList.remove('hide');  
+                }
+            }
             a.onclick = (e) => {
                 e.preventDefault();
                 currentPage = i;
                 renderTable();
             };
             li.appendChild(a);
+            if (li.children[0].classList.contains('hide')) {
+                li.style.margin = 0;
+            }
+            if (a.textContent ==='...')
+            {
+                a.style.pointerEvents = 'none';
+                // link.classList.add('no-select');
+            }
             paginationList.appendChild(li);
         }
 

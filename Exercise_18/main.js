@@ -140,6 +140,7 @@ document.addEventListener('DOMContentLoaded', function() {
         prevLi.appendChild(prevLink);
         paginationList.appendChild(prevLi);
 
+        
         // Page numbers
         for (let i = 1; i <= totalPages; i++) {
             const li = document.createElement('li');
@@ -148,8 +149,26 @@ document.addEventListener('DOMContentLoaded', function() {
             link.href = '#';
             link.className = 'paginate-link';
             link.textContent = i;
+           
+           
             if (i === currentPage) {
                 link.classList.add('active');
+            }
+            
+            //Hide the link if it's not in the current page
+            if (i === 1 || i === totalPages) {
+                link.classList.remove('hide');
+                
+            }
+            else if (i >= currentPage - 1 && i <= currentPage + 1) {
+                link.classList.remove('hide');
+            } 
+            else {
+                link.classList.add('hide');
+                if (i === currentPage - 2 || i === currentPage + 2) {
+                    link.textContent = '...';
+                    link.classList.remove('hide');  
+                }
             }
             link.onclick = (e) => {
                 e.preventDefault();
@@ -157,8 +176,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 renderTable();
             };
             li.appendChild(link);
+            if (li.children[0].classList.contains('hide')) {
+                li.style.margin = 0;
+            }
+            if (link.textContent ==='...')
+            {
+                link.style.pointerEvents = 'none';
+                // link.classList.add('no-select');
+            }
             paginationList.appendChild(li);
         }
+       
+        
 
         // Next button
         const nextLi = document.createElement('li');
@@ -177,10 +206,12 @@ document.addEventListener('DOMContentLoaded', function() {
         nextLi.appendChild(nextLink);
         paginationList.appendChild(nextLi);
 
+
         // Disable Previous and Next buttons when necessary
         prevLink.classList.toggle('disabled', currentPage === 1);
         nextLink.classList.toggle('disabled', currentPage === totalPages);
     }
+
 
     function editStudent(index) {
         const student = students[index];
