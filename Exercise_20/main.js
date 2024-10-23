@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
         { name: "Bùi Thị Dung", studentId: "SV032", email: "buithidung@example.com", faculty: "kinh-te", gender: "nu", birthdate: "2001-08-15" },
         { name: "Trương Văn Duy", studentId: "SV033", email: "truongvanduy@example.com", faculty: "co-khi", gender: "nam", birthdate: "1999-10-12" },
         { name: "Lý Thị E", studentId: "SV034", email: "lythie@example.com", faculty: "dien-tu", gender: "nu", birthdate: "2000-11-22" },
-        { name: "Mai Văn Giang", studentId: "SV035", email: "maivangi@example.com", faculty: "xay -dung", gender: "nam", birthdate: "2001-03-01" },
+        { name: "Mai Văn Giang", studentId: "SV035", email: "maivangi@example.com", faculty: "xay-dung", gender: "nam", birthdate: "2001-03-01" },
         { name: "Nguyễn Thị Hà", studentId: "SV036", email: "nguyenthinha@example.com", faculty: "cntt", gender: "nu", birthdate: "1999-05-15" },
         { name: "Trần Văn Hậu", studentId: "SV037", email: "tranvanhau@example.com", faculty: "kinh-te", gender: "nam", birthdate: "2000-09-28" },
         { name: "Phạm Thị Hồng", studentId: "SV038", email: "phamthihong@example.com", faculty: "co-khi", gender: "nu", birthdate: "2001-01-05" },
